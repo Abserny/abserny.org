@@ -1,0 +1,168 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Abserny v1.0 Released - Abserny</title>
+    <link rel="stylesheet" href="/assets/css/style.css">
+</head>
+<body>
+    <header>
+        <div class="header-content">
+            <a href="/" class="logo">
+                <img src="/assets/images/absernyy.png" alt="Abserny" >
+            </a>
+            <nav>
+                <a href="/" >Home</a>
+                <a href="/documentation" >Documentation</a>
+                <a href="/updates" class="active">Updates</a>
+            </nav>
+            <button class="menu-toggle">☰</button>
+        </div>
+    </header>
+
+    <main>
+        <div class="container">
+    <div class="update-detail">
+        <div class="update-header">
+            <div class="update-date">February 1, 2024</div>
+            <h1>Abserny v1.0 Released</h1>
+            <div class="update-meta">First Stable Release</div>
+        </div>
+
+        <div class="content">
+            <p>We're thrilled to announce the release of Abserny version 1.0, marking the first stable release of our offline object detection tool designed specifically for visually impaired users.</p>
+
+            <h2>What's New in v1.0</h2>
+            <p>This release includes a complete set of features that make Abserny a fully functional accessibility tool:</p>
+
+            <h3>Voice Activation</h3>
+            <ul>
+                <li>Five Arabic trigger words for hands-free activation</li>
+                <li>Continuous listening mode with low CPU usage</li>
+                <li>High accuracy voice recognition using Vosk</li>
+                <li>Customizable trigger word sensitivity</li>
+            </ul>
+
+            <h3>Object Detection</h3>
+            <ul>
+                <li>Real-time detection using YOLOv8 nano model</li>
+                <li>Support for 80+ common object categories</li>
+                <li>Confidence threshold customization</li>
+                <li>Fast processing (typically 1-2 seconds)</li>
+            </ul>
+
+            <h3>Natural Language Output</h3>
+            <ul>
+                <li>Contextual Arabic descriptions of detected objects</li>
+                <li>Natural sounding text-to-speech</li>
+                <li>Adjustable speech rate and volume</li>
+                <li>Clear pronunciation of Arabic terms</li>
+            </ul>
+
+            <h3>Complete Offline Operation</h3>
+            <ul>
+                <li>All processing happens locally</li>
+                <li>No internet connection required after setup</li>
+                <li>Complete privacy - no data sent to servers</li>
+                <li>Works in any environment</li>
+            </ul>
+
+            <h3>Cross-Platform Support</h3>
+            <ul>
+                <li>Windows 10/11</li>
+                <li>macOS 10.14 or later</li>
+                <li>Linux (Ubuntu 20.04+, Fedora, Arch)</li>
+            </ul>
+
+            <h2>Installation</h2>
+            <p>Installation is straightforward with our comprehensive guide:</p>
+            <ol>
+                <li>Clone the repository or download the release</li>
+                <li>Install Python 3.8+ if not already installed</li>
+                <li>Run <code>pip install -r requirements.txt</code></li>
+                <li>Download required models with <code>python download_models.py</code></li>
+                <li>Launch with <code>python main.py</code></li>
+            </ol>
+            <p>See the <a href="/docs/abserny-core#installation">complete installation guide</a> for detailed instructions.</p>
+
+            <h2>Technical Details</h2>
+            <p>Abserny v1.0 is built with carefully selected technologies:</p>
+
+            <h3>Core Components</h3>
+            <ul>
+                <li><strong>Vosk</strong> - Offline Arabic speech recognition</li>
+                <li><strong>YOLOv8</strong> - Fast and accurate object detection</li>
+                <li><strong>pyttsx3</strong> - Cross-platform text-to-speech</li>
+                <li><strong>OpenCV</strong> - Camera capture and image processing</li>
+                <li><strong>KivyMD</strong> - Accessible user interface framework</li>
+            </ul>
+
+            <h3>Performance</h3>
+            <ul>
+                <li>Detection latency: 1-2 seconds on modern hardware</li>
+                <li>Voice recognition latency: < 500ms</li>
+                <li>Memory usage: ~500MB during operation</li>
+                <li>CPU usage: 15-30% on mid-range processors</li>
+            </ul>
+
+            <h2>What's Next</h2>
+            <p>Version 1.0 is just the beginning. We're already working on exciting improvements:</p>
+
+            <h3>Version 1.1 (Planned)</h3>
+            <ul>
+                <li>Custom ASR model integration for better accuracy</li>
+                <li>Additional trigger words and languages</li>
+                <li>Performance optimizations</li>
+                <li>Enhanced natural language descriptions</li>
+            </ul>
+
+            <h3>Mobile App (In Development)</h3>
+            <ul>
+                <li>Native Android application</li>
+                <li>Optimized for mobile hardware</li>
+                <li>Haptic feedback integration</li>
+                <li>Expected release: Q4 2024</li>
+            </ul>
+
+            <h2>Try It Today</h2>
+            <p>Download Abserny v1.0 and experience accessible object detection:</p>
+            <ul>
+                <li><a href="https://github.com/yourusername/abserny/releases/tag/v1.0.0" target="_blank">Download from GitHub Releases</a></li>
+                <li><a href="/docs/abserny-core">Read the documentation</a></li>
+                <li><a href="https://github.com/yourusername/abserny/issues" target="_blank">Report issues or request features</a></li>
+            </ul>
+
+            <h2>Acknowledgments</h2>
+            <p>This release wouldn't be possible without:</p>
+            <ul>
+                <li>Our beta testers who provided invaluable feedback</li>
+                <li>The open-source community for excellent tools and libraries</li>
+                <li>Contributors who helped with documentation and testing</li>
+                <li>Academic advisors for their guidance and support</li>
+            </ul>
+
+            <p>Thank you for your interest in Abserny. We're excited to see how it helps visually impaired users navigate their world with greater confidence and independence.</p>
+        </div>
+
+        <a href="/updates" class="back-link">← Back to all updates</a>
+    </div>
+</div>
+
+    </main>
+
+    <footer>
+        <div class="footer-content">
+            <div class="footer-links">
+                <a href="https://abserny.com" target="_blank">Main Website</a>
+                <a href="https://github.com/yourusername/abserny-docs" target="_blank">Documentation Repository</a>
+            </div>
+            <div class="copyright">
+                © 2024 Abserny Project. All rights reserved.
+            </div>
+        </div>
+    </footer>
+
+    <script src="/assets/js/main.js"></script>
+</body>
+</html>

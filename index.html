@@ -1,0 +1,61 @@
+---
+layout: default
+title: Home
+---
+
+<div class="container">
+    <div class="banner">
+        <img src="assets/images/docbanner.png" alt="banner" />
+    </div>
+    <div class="hero">
+        <!-- <h1>Abserny Documentation</h1> -->
+        <p>Complete technical documentation and project updates for Abserny - an offline object detection tool for visually impaired users.</p>
+        <p>أبصِرني - Accessible, offline, voice-activated object detection in Arabic.</p>
+    </div>
+
+    <div class="section">
+        <h2>About This Site</h2>
+        <p>This site serves as the central documentation hub for the Abserny project and its related initiatives. Here you'll find comprehensive guides, technical details, and regular updates about our development progress.</p>
+        <p>The documentation is organized by project, making it easy to find information specific to each component of the Abserny ecosystem.</p>
+    </div>
+
+    <div class="section">
+        <h2>Projects</h2>
+        <p>Explore documentation for each of our projects:</p>
+        
+        <div class="projects-grid">
+            <div class="project-card">
+                <span class="project-status active">Active</span>
+                <h3>Abserny Core</h3>
+                <p>The main object detection system with voice control, offline operation, and Arabic language support for visually impaired users.</p>
+                <a href="{{ '/docs/abserny-core' | relative_url }}" class="btn">View Documentation</a>
+            </div>
+
+            <div class="project-card">
+                <span class="project-status dev">In Development</span>
+                <h3>ASR Project</h3>
+                <p>Custom Arabic speech recognition system optimized for voice commands and environmental conditions specific to Abserny.</p>
+                <a href="{{ '/docs/asr-project' | relative_url }}" class="btn">View Documentation</a>
+            </div>
+
+            <div class="project-card">
+                <span class="project-status dev">In Development</span>
+                <h3>Mobile App</h3>
+                <p>Native mobile application bringing Abserny's functionality to smartphones for increased portability and accessibility.</p>
+                <a href="{{ '/docs/mobile-app' | relative_url }}" class="btn">View Documentation</a>
+            </div>
+        </div>
+    </div>
+
+    <div class="section">
+        <h2>Purpose</h2>
+        <p>Abserny is a graduation project focused on creating accessible technology for visually impaired Arabic-speaking users. This documentation provides all necessary information for understanding, installing, using, and contributing to the system.</p>
+        <p>The project emphasizes:</p>
+        <ul style="color: var(--text-secondary); padding-left: 1.5rem;">
+            <li>Complete offline operation for privacy and reliability</li>
+            <li>Arabic language support throughout the system</li>
+            <li>Voice-activated controls for hands-free operation</li>
+            <li>Accessibility-first design principles</li>
+        </ul>
+    </div>
+</div>

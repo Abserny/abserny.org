@@ -1,0 +1,245 @@
+---
+layout: default
+title: ASR Project Documentation
+---
+
+<div class="doc-layout">
+    <aside class="sidebar">
+        <div class="sidebar-section">
+            <h3>Projects</h3>
+            <ul>
+                <li><a href="{{ '/docs/abserny-core' | relative_url }}">Abserny Core</a></li>
+                <li><a href="{{ '/docs/asr-project' | relative_url }}" class="active">ASR Project</a></li>
+                <li><a href="{{ '/docs/mobile-app' | relative_url }}">Mobile App</a></li>
+            </ul>
+        </div>
+
+        <div class="sidebar-section">
+            <h3>Overview</h3>
+            <ul>
+                <li><a href="#introduction">Introduction</a></li>
+                <li><a href="#goals">Project Goals</a></li>
+                <li><a href="#status">Current Status</a></li>
+            </ul>
+        </div>
+
+        <div class="sidebar-section">
+            <h3>Technical Details</h3>
+            <ul>
+                <li><a href="#architecture">Architecture</a></li>
+                <li><a href="#dataset">Dataset</a></li>
+                <li><a href="#training">Training</a></li>
+            </ul>
+        </div>
+
+        <div class="sidebar-section">
+            <h3>Development</h3>
+            <ul>
+                <li><a href="#roadmap">Roadmap</a></li>
+                <li><a href="#contributing">Contributing</a></li>
+            </ul>
+        </div>
+    </aside>
+
+    <div class="doc-content">
+        <div class="doc-header">
+            <h1>ASR Project</h1>
+            <div class="subtitle">Custom Arabic Speech Recognition for Abserny</div>
+        </div>
+
+        <h2 id="introduction">Introduction</h2>
+        <p>The ASR (Automatic Speech Recognition) Project is a dedicated effort to develop a custom Arabic speech recognition model optimized specifically for Abserny's use case. This side project aims to improve recognition accuracy, reduce latency, and provide better performance in various acoustic conditions.</p>
+        <p><strong>Status:</strong> In Development</p>
+
+        <h2 id="goals">Project Goals</h2>
+        <p>The ASR project has several key objectives:</p>
+
+        <h3>Primary Goals</h3>
+        <ul>
+            <li><strong>Improved Accuracy:</strong> Better recognition of Arabic trigger words in various accents and dialects</li>
+            <li><strong>Reduced Latency:</strong> Faster processing for more responsive voice activation</li>
+            <li><strong>Noise Robustness:</strong> Better performance in noisy environments</li>
+            <li><strong>Lower Resource Usage:</strong> More efficient model requiring less CPU/RAM</li>
+        </ul>
+
+        <h3>Secondary Goals</h3>
+        <ul>
+            <li>Support for additional Arabic dialects</li>
+            <li>Continuous learning from user interactions</li>
+            <li>Customizable wake word training</li>
+            <li>Integration with Abserny ecosystem</li>
+        </ul>
+
+        <h2 id="status">Current Status</h2>
+        <p>The project is currently in the early development phase:</p>
+
+        <h3>Completed</h3>
+        <ul>
+            <li>Project planning and requirements gathering</li>
+            <li>Initial dataset collection started</li>
+            <li>Architecture design completed</li>
+            <li>Development environment setup</li>
+        </ul>
+
+        <h3>In Progress</h3>
+        <ul>
+            <li>Dataset expansion and augmentation</li>
+            <li>Model architecture implementation</li>
+            <li>Training pipeline development</li>
+        </ul>
+
+        <h3>Planned</h3>
+        <ul>
+            <li>Initial model training</li>
+            <li>Evaluation and benchmarking</li>
+            <li>Integration testing with Abserny Core</li>
+            <li>Production deployment</li>
+        </ul>
+
+        <h2 id="architecture">Architecture</h2>
+        <p>The ASR system is being developed with the following architecture:</p>
+
+        <h3>Model Structure</h3>
+        <ul>
+            <li><strong>Input Processing:</strong> Audio feature extraction using MFCC/Mel-spectrograms</li>
+            <li><strong>Acoustic Model:</strong> Deep neural network for phoneme recognition</li>
+            <li><strong>Language Model:</strong> N-gram model for Arabic trigger words</li>
+            <li><strong>Decoder:</strong> Beam search decoder for final word prediction</li>
+        </ul>
+
+        <h3>Technology Stack</h3>
+        <pre><code>import tensorflow as tf
+import librosa
+import numpy as np
+
+# Audio feature extraction
+def extract_features(audio_path):
+    audio, sr = librosa.load(audio_path, sr=16000)
+    mfcc = librosa.feature.mfcc(y=audio, sr=sr, n_mfcc=13)
+    return mfcc
+
+# Model architecture (simplified)
+model = tf.keras.Sequential([
+    tf.keras.layers.LSTM(256, return_sequences=True),
+    tf.keras.layers.LSTM(256),
+    tf.keras.layers.Dense(128, activation='relu'),
+    tf.keras.layers.Dense(num_classes, activation='softmax')
+])</code></pre>
+
+        <h2 id="dataset">Dataset</h2>
+        <p>We are building a custom dataset specifically for Arabic trigger words:</p>
+
+        <h3>Dataset Composition</h3>
+        <ul>
+            <li>10,000+ recordings of trigger words</li>
+            <li>Multiple speakers with various accents</li>
+            <li>Different acoustic conditions (quiet, noisy, reverberant)</li>
+            <li>Various recording devices (phone, laptop, headset)</li>
+        </ul>
+
+        <h3>Data Collection</h3>
+        <p>Dataset is being collected through:</p>
+        <ul>
+            <li>Crowdsourced recordings from volunteers</li>
+            <li>Synthetic data generation and augmentation</li>
+            <li>Existing Arabic speech corpora</li>
+        </ul>
+
+        <h3>Data Augmentation</h3>
+        <p>To increase robustness, we apply:</p>
+        <ul>
+            <li>Background noise addition</li>
+            <li>Speed and pitch variations</li>
+            <li>Room impulse response simulation</li>
+            <li>Volume normalization</li>
+        </ul>
+
+        <h2 id="training">Training</h2>
+        <p>The model training process involves:</p>
+
+        <h3>Training Configuration</h3>
+        <pre><code># Training parameters
+BATCH_SIZE = 32
+LEARNING_RATE = 0.001
+EPOCHS = 100
+VALIDATION_SPLIT = 0.2
+
+# Optimizer
+optimizer = tf.keras.optimizers.Adam(learning_rate=LEARNING_RATE)
+
+# Loss function
+loss = tf.keras.losses.CategoricalCrossentropy()
+
+# Metrics
+metrics = ['accuracy', 'precision', 'recall']</code></pre>
+
+        <h3>Training Pipeline</h3>
+        <ol>
+            <li>Data preprocessing and feature extraction</li>
+            <li>Train/validation/test split</li>
+            <li>Model training with early stopping</li>
+            <li>Hyperparameter tuning</li>
+            <li>Final model evaluation</li>
+            <li>Model optimization for deployment</li>
+        </ol>
+
+        <h2 id="roadmap">Development Roadmap</h2>
+        
+        <h3>Phase 1: Foundation (Current)</h3>
+        <ul>
+            <li>Dataset collection and preparation</li>
+            <li>Model architecture implementation</li>
+            <li>Training infrastructure setup</li>
+        </ul>
+
+        <h3>Phase 2: Training</h3>
+        <ul>
+            <li>Initial model training</li>
+            <li>Evaluation and benchmarking</li>
+            <li>Model optimization</li>
+        </ul>
+
+        <h3>Phase 3: Integration</h3>
+        <ul>
+            <li>Integration with Abserny Core</li>
+            <li>End-to-end testing</li>
+            <li>Performance optimization</li>
+        </ul>
+
+        <h3>Phase 4: Deployment</h3>
+        <ul>
+            <li>Production release</li>
+            <li>User feedback collection</li>
+            <li>Continuous improvement</li>
+        </ul>
+
+        <h2 id="contributing">Contributing</h2>
+        <p>We welcome contributions to the ASR project!</p>
+
+        <h3>How to Contribute</h3>
+        <ul>
+            <li><strong>Data Collection:</strong> Record trigger words in your voice</li>
+            <li><strong>Code Contributions:</strong> Improve training pipeline or model architecture</li>
+            <li><strong>Testing:</strong> Test models and provide feedback</li>
+            <li><strong>Documentation:</strong> Help improve documentation</li>
+        </ul>
+
+        <h3>Recording Guidelines</h3>
+        <p>If you want to contribute voice recordings:</p>
+        <ol>
+            <li>Record in a quiet environment</li>
+            <li>Use a good quality microphone</li>
+            <li>Speak naturally at normal pace</li>
+            <li>Record each trigger word 10 times</li>
+            <li>Save as WAV format, 16kHz sample rate</li>
+        </ol>
+
+        <h3>Development Setup</h3>
+        <pre><code>git clone https://github.com/yourusername/abserny-asr.git
+cd abserny-asr
+pip install -r requirements.txt
+python train.py --config config.yaml</code></pre>
+
+        <p><em>Note: Detailed documentation will be available as the project progresses.</em></p>
+    </div>
+</div>

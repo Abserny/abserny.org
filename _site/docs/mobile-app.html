@@ -1,0 +1,317 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Mobile App Documentation - Abserny</title>
+    <link rel="stylesheet" href="/assets/css/style.css">
+</head>
+<body>
+    <header>
+        <div class="header-content">
+            <a href="/" class="logo">
+                <img src="/assets/images/absernyy.png" alt="Abserny" >
+            </a>
+            <nav>
+                <a href="/" >Home</a>
+                <a href="/documentation" class="active">Documentation</a>
+                <a href="/updates" >Updates</a>
+            </nav>
+            <button class="menu-toggle">☰</button>
+        </div>
+    </header>
+
+    <main>
+        <div class="doc-layout">
+    <aside class="sidebar">
+        <div class="sidebar-section">
+            <h3>Projects</h3>
+            <ul>
+                <li><a href="/docs/abserny-core">Abserny Core</a></li>
+                <li><a href="/docs/asr-project">ASR Project</a></li>
+                <li><a href="/docs/mobile-app" class="active">Mobile App</a></li>
+            </ul>
+        </div>
+
+        <div class="sidebar-section">
+            <h3>Overview</h3>
+            <ul>
+                <li><a href="#introduction">Introduction</a></li>
+                <li><a href="#platforms">Platforms</a></li>
+                <li><a href="#status">Current Status</a></li>
+            </ul>
+        </div>
+
+        <div class="sidebar-section">
+            <h3>Features</h3>
+            <ul>
+                <li><a href="#core-features">Core Features</a></li>
+                <li><a href="#mobile-specific">Mobile-Specific</a></li>
+            </ul>
+        </div>
+
+        <div class="sidebar-section">
+            <h3>Development</h3>
+            <ul>
+                <li><a href="#architecture">Architecture</a></li>
+                <li><a href="#roadmap">Roadmap</a></li>
+            </ul>
+        </div>
+    </aside>
+
+    <div class="doc-content">
+        <div class="doc-header">
+            <h1>Mobile App</h1>
+            <div class="subtitle">Abserny for Android and iOS</div>
+        </div>
+
+        <h2 id="introduction">Introduction</h2>
+        <p>The Abserny Mobile App brings the power of offline object detection to smartphones, making the system even more portable and accessible. The mobile version maintains all core functionality while optimizing for mobile hardware and adding platform-specific features.</p>
+        <p><strong>Status:</strong> In Development</p>
+
+        <h3>Why Mobile?</h3>
+        <ul>
+            <li><strong>Portability:</strong> Carry Abserny wherever you go</li>
+            <li><strong>Accessibility:</strong> Built-in accessibility features of iOS and Android</li>
+            <li><strong>Camera Quality:</strong> Leverage high-quality smartphone cameras</li>
+            <li><strong>Always Available:</strong> Quick access without carrying additional devices</li>
+        </ul>
+
+        <h2 id="platforms">Platforms</h2>
+        
+        <h3>Android</h3>
+        <p><strong>Development Status:</strong> Primary development platform</p>
+        <ul>
+            <li>Minimum SDK: Android 8.0 (API 26)</li>
+            <li>Target SDK: Android 14 (API 34)</li>
+            <li>Development Framework: React Native</li>
+        </ul>
+
+        <h3>iOS</h3>
+        <p><strong>Development Status:</strong> Planned for Phase 2</p>
+        <ul>
+            <li>Minimum Version: iOS 13.0</li>
+            <li>Target Version: iOS 17</li>
+            <li>Development Framework: React Native</li>
+        </ul>
+
+        <h2 id="status">Current Status</h2>
+        <p>The mobile app is in active development:</p>
+
+        <h3>Completed</h3>
+        <ul>
+            <li>Technology stack selection (React Native)</li>
+            <li>Project initialization and setup</li>
+            <li>UI/UX design mockups</li>
+            <li>Development environment configuration</li>
+        </ul>
+
+        <h3>In Progress</h3>
+        <ul>
+            <li>Core UI implementation</li>
+            <li>Camera integration</li>
+            <li>Voice recognition setup</li>
+            <li>Object detection model optimization for mobile</li>
+        </ul>
+
+        <h3>Planned</h3>
+        <ul>
+            <li>TTS integration</li>
+            <li>Offline functionality implementation</li>
+            <li>Accessibility features</li>
+            <li>Beta testing</li>
+            <li>App store submission</li>
+        </ul>
+
+        <h2 id="core-features">Core Features</h2>
+        <p>The mobile app includes all core Abserny features:</p>
+
+        <h3>Voice Activation</h3>
+        <ul>
+            <li>Arabic trigger word recognition</li>
+            <li>Always-on listening mode (optional)</li>
+            <li>Tap-to-activate alternative</li>
+        </ul>
+
+        <h3>Object Detection</h3>
+        <ul>
+            <li>Real-time detection using optimized YOLOv8</li>
+            <li>Support for front and rear cameras</li>
+            <li>Flashlight integration for low-light conditions</li>
+        </ul>
+
+        <h3>Arabic TTS</h3>
+        <ul>
+            <li>Natural language descriptions</li>
+            <li>Adjustable speech rate</li>
+            <li>Volume control</li>
+        </ul>
+
+        <h2 id="mobile-specific">Mobile-Specific Features</h2>
+        <p>Additional features designed for mobile platforms:</p>
+
+        <h3>Haptic Feedback</h3>
+        <ul>
+            <li>Vibration on detection start</li>
+            <li>Different patterns for different events</li>
+            <li>Customizable feedback intensity</li>
+        </ul>
+
+        <h3>Screen Reader Integration</h3>
+        <ul>
+            <li>Full TalkBack support (Android)</li>
+            <li>VoiceOver support (iOS)</li>
+            <li>Accessible UI elements</li>
+        </ul>
+
+        <h3>Battery Optimization</h3>
+        <ul>
+            <li>Efficient power management</li>
+            <li>Background processing limits</li>
+            <li>Battery saver mode</li>
+        </ul>
+
+        <h3>Widget Support</h3>
+        <ul>
+            <li>Quick activation widget</li>
+            <li>Recent detections widget</li>
+            <li>Status indicators</li>
+        </ul>
+
+        <h2 id="architecture">Architecture</h2>
+        <p>The mobile app is built using React Native with native modules for performance-critical components:</p>
+
+        <h3>Technology Stack</h3>
+        <pre><code>// React Native for cross-platform UI
+import React from 'react';
+import { View, Text, TouchableOpacity } from 'react-native';
+
+// Native modules for camera and ML
+import { Camera } from 'react-native-camera-kit';
+import { YOLODetector } from './native-modules/detector';
+
+// Voice recognition
+import Voice from '@react-native-voice/voice';
+
+// Text-to-speech
+import Tts from 'react-native-tts';</code></pre>
+
+        <h3>Application Structure</h3>
+        <ul>
+            <li><strong>UI Layer:</strong> React Native components</li>
+            <li><strong>Business Logic:</strong> JavaScript/TypeScript</li>
+            <li><strong>ML Processing:</strong> Native modules (Java/Swift)</li>
+            <li><strong>Voice Processing:</strong> Native ASR/TTS libraries</li>
+        </ul>
+
+        <h3>Model Optimization</h3>
+        <p>YOLOv8 model is optimized for mobile deployment:</p>
+        <ul>
+            <li>Model quantization for smaller size</li>
+            <li>TensorFlow Lite conversion</li>
+            <li>GPU acceleration support</li>
+            <li>Dynamic resolution scaling</li>
+        </ul>
+
+        <h2 id="roadmap">Development Roadmap</h2>
+
+        <h3>Phase 1: Foundation (Current)</h3>
+        <p><strong>Timeline:</strong> Q1 2024</p>
+        <ul>
+            <li>Basic UI implementation</li>
+            <li>Camera integration</li>
+            <li>Voice recognition setup</li>
+            <li>Local model integration</li>
+        </ul>
+
+        <h3>Phase 2: Core Features</h3>
+        <p><strong>Timeline:</strong> Q2 2024</p>
+        <ul>
+            <li>Object detection functionality</li>
+            <li>TTS integration</li>
+            <li>Settings and configuration</li>
+            <li>Offline mode implementation</li>
+        </ul>
+
+        <h3>Phase 3: Polish</h3>
+        <p><strong>Timeline:</strong> Q3 2024</p>
+        <ul>
+            <li>UI/UX refinement</li>
+            <li>Performance optimization</li>
+            <li>Accessibility enhancements</li>
+            <li>Beta testing</li>
+        </ul>
+
+        <h3>Phase 4: Release</h3>
+        <p><strong>Timeline:</strong> Q4 2024</p>
+        <ul>
+            <li>Final testing and bug fixes</li>
+            <li>App store submission (Android)</li>
+            <li>Public release</li>
+            <li>iOS version kickoff</li>
+        </ul>
+
+        <h3>Design Mockups</h3>
+        <p>The mobile app features a clean, accessible interface:</p>
+        <ul>
+            <li>Large, touch-friendly buttons</li>
+            <li>High contrast color scheme</li>
+            <li>Minimal UI for simplicity</li>
+            <li>Clear visual feedback</li>
+        </ul>
+
+        <h3>Key Screens</h3>
+        <ul>
+            <li><strong>Home Screen:</strong> Main camera view with activation button</li>
+            <li><strong>Settings:</strong> Configuration options</li>
+            <li><strong>History:</strong> Recent detections log</li>
+            <li><strong>Help:</strong> Tutorial and documentation</li>
+        </ul>
+
+        <h3>Installation (When Released)</h3>
+        <p>The app will be available through official stores:</p>
+        <ul>
+            <li><strong>Android:</strong> Google Play Store</li>
+            <li><strong>iOS:</strong> Apple App Store (planned)</li>
+        </ul>
+
+        <h3>System Requirements</h3>
+        <p><strong>Android:</strong></p>
+        <ul>
+            <li>Android 8.0 or higher</li>
+            <li>2GB RAM minimum</li>
+            <li>Camera permission</li>
+            <li>Microphone permission</li>
+            <li>200MB free storage</li>
+        </ul>
+
+        <p><strong>iOS (planned):</strong></p>
+        <ul>
+            <li>iOS 13.0 or higher</li>
+            <li>2GB RAM minimum</li>
+            <li>Camera access</li>
+            <li>Microphone access</li>
+            <li>200MB free storage</li>
+        </ul>
+
+        <p><em>Note: Documentation will be expanded as development progresses.</em></p>
+    </div>
+</div>
+
+    </main>
+
+    <footer>
+        <div class="footer-content">
+            <div class="footer-links">
+                <a href="https://abserny.com" target="_blank">Main Website</a>
+                <a href="https://github.com/yourusername/abserny-docs" target="_blank">Documentation Repository</a>
+            </div>
+            <div class="copyright">
+                © 2024 Abserny Project. All rights reserved.
+            </div>
+        </div>
+    </footer>
+
+    <script src="/assets/js/main.js"></script>
+</body>
+</html>

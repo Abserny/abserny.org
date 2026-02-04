@@ -1,0 +1,15 @@
+title: Abserny
+description: Technical documentation and project updates
+baseurl: "/abserny.org"
+url: "https://Abserny.github.io"
+
+markdown: kramdown
+plugins:
+  - jekyll-feed
+
+exclude:
+  - Gemfile
+  - Gemfile.lock
+  - README.md
+  - node_modules
+  - vendor

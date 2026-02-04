@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>{% if page.title %}{{ page.title }} - {% endif %}{{ site.title }}</title>
+    <link rel="stylesheet" href="{{ '/assets/css/style.css' | relative_url }}">
+</head>
+<body>
+    <header>
+        <div class="header-content">
+            <a href="{{ '/' | relative_url }}" class="logo">
+                <img src="{{ '/assets/images/absernyy.png' | relative_url }}" alt="Abserny" >
+            </a>
+            <nav>
+                <a href="{{ '/' | relative_url }}" {% if page.url == '/' %}class="active"{% endif %}>Home</a>
+                <a href="{{ '/documentation' | relative_url }}" {% if page.url contains '/docs' or page.url == '/documentation/' %}class="active"{% endif %}>Documentation</a>
+                <a href="{{ '/updates' | relative_url }}" {% if page.url contains '/updates' %}class="active"{% endif %}>Updates</a>
+            </nav>
+            <button class="menu-toggle">☰</button>
+        </div>
+    </header>
+
+    <main>
+        {{ content }}
+    </main>
+
+    <footer>
+        <div class="footer-content">
+            <div class="footer-links">
+                <a href="https://abserny.com" target="_blank">Main Website</a>
+                <a href="https://github.com/yourusername/abserny-docs" target="_blank">Documentation Repository</a>
+            </div>
+            <div class="copyright">
+                © 2024 Abserny Project. All rights reserved.
+            </div>
+        </div>
+    </footer>
+
+    <script src="{{ '/assets/js/main.js' | relative_url }}"></script>
+</body>
+</html>

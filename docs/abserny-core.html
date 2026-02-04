@@ -1,0 +1,272 @@
+---
+layout: default
+title: Abserny Core Documentation
+---
+
+<div class="doc-layout">
+    <aside class="sidebar">
+        <div class="sidebar-section">
+            <h3>Projects</h3>
+            <ul>
+                <li><a href="{{ '/docs/abserny-core' | relative_url }}" class="active">Abserny Core</a></li>
+                <li><a href="{{ '/docs/asr-project' | relative_url }}">ASR Project</a></li>
+                <li><a href="{{ '/docs/mobile-app' | relative_url }}">Mobile App</a></li>
+            </ul>
+        </div>
+
+        <div class="sidebar-section">
+            <h3>Getting Started</h3>
+            <ul>
+                <li><a href="#introduction">Introduction</a></li>
+                <li><a href="#installation">Installation</a></li>
+                <li><a href="#quick-start">Quick Start</a></li>
+            </ul>
+        </div>
+
+        <div class="sidebar-section">
+            <h3>Core Features</h3>
+            <ul>
+                <li><a href="#voice-control">Voice Control</a></li>
+                <li><a href="#object-detection">Object Detection</a></li>
+                <li><a href="#offline-mode">Offline Mode</a></li>
+            </ul>
+        </div>
+
+        <div class="sidebar-section">
+            <h3>Configuration</h3>
+            <ul>
+                <li><a href="#settings">Settings</a></li>
+                <li><a href="#customization">Customization</a></li>
+            </ul>
+        </div>
+
+        <div class="sidebar-section">
+            <h3>Reference</h3>
+            <ul>
+                <li><a href="#api">API Reference</a></li>
+                <li><a href="#troubleshooting">Troubleshooting</a></li>
+            </ul>
+        </div>
+    </aside>
+
+    <div class="doc-content">
+        <div class="doc-header">
+            <h1>Abserny Core</h1>
+            <div class="subtitle">Offline object detection system for visually impaired users</div>
+        </div>
+
+        <h2 id="introduction">Introduction</h2>
+        <p>Abserny (أبصِرني) is an offline object detection system designed specifically for visually impaired users. It combines voice recognition, computer vision, and text-to-speech to provide accessible environmental awareness through natural Arabic language interaction.</p>
+        <p>The system operates entirely offline after initial setup, ensuring complete user privacy and reliability without internet dependency.</p>
+
+        <h3>Key Features</h3>
+        <ul>
+            <li>Voice-activated detection using Arabic trigger words</li>
+            <li>Real-time YOLOv8-based object detection</li>
+            <li>Natural Arabic language descriptions</li>
+            <li>Complete offline operation</li>
+            <li>Cross-platform support (Windows, macOS, Linux)</li>
+            <li>Privacy-first architecture</li>
+        </ul>
+
+        <h2 id="installation">Installation</h2>
+        <p>System requirements:</p>
+        <ul>
+            <li>Python 3.8 or higher</li>
+            <li>4GB RAM minimum (8GB recommended)</li>
+            <li>Webcam (built-in or USB)</li>
+            <li>Microphone (built-in or external)</li>
+            <li>2GB free disk space</li>
+        </ul>
+
+        <h3>Installation Steps</h3>
+        <p>Clone the repository:</p>
+        <pre><code>git clone https://github.com/yourusername/abserny.git
+cd abserny</code></pre>
+
+        <p>Install dependencies:</p>
+        <pre><code>pip install -r requirements.txt</code></pre>
+
+        <p>Download required models:</p>
+        <pre><code>python download_models.py</code></pre>
+
+        <h2 id="quick-start">Quick Start</h2>
+        <p>Launch the application:</p>
+        <pre><code>python main.py</code></pre>
+
+        <p>The system will initialize and begin listening for Arabic voice commands. Simply say one of the trigger words to activate object detection.</p>
+
+        <h2 id="voice-control">Voice Control</h2>
+        <p>Abserny responds to the following Arabic trigger words:</p>
+        
+        <h3>Trigger Words</h3>
+        <ul>
+            <li><strong>ابدأ</strong> (Ibda') - Start detection</li>
+            <li><strong>اكتشف</strong> (Iktashif) - Detect objects</li>
+            <li><strong>شوف</strong> (Shuf) - See what's there</li>
+            <li><strong>انظر</strong> (Undhur) - Look</li>
+            <li><strong>امسح</strong> (Imsah) - Scan area</li>
+        </ul>
+
+        <h3>How It Works</h3>
+        <p>When a trigger word is detected:</p>
+        <ol>
+            <li>System captures current camera frame</li>
+            <li>YOLOv8 processes the image</li>
+            <li>Objects are identified and located</li>
+            <li>Natural Arabic description is generated</li>
+            <li>Description is spoken through TTS</li>
+        </ol>
+
+        <h2 id="object-detection">Object Detection</h2>
+        <p>The system uses YOLOv8 (You Only Look Once version 8) for real-time object detection. The nano variant (yolov8n) is used by default for optimal balance between speed and accuracy.</p>
+
+        <h3>Detection Process</h3>
+        <p>The detection pipeline includes:</p>
+        <ul>
+            <li>Frame capture and preprocessing</li>
+            <li>Object detection inference</li>
+            <li>Confidence filtering</li>
+            <li>Natural language generation</li>
+            <li>Speech synthesis</li>
+        </ul>
+
+        <h3>Supported Objects</h3>
+        <p>The system can detect 80+ common objects including:</p>
+        <ul>
+            <li>People and body parts</li>
+            <li>Furniture and household items</li>
+            <li>Electronics and devices</li>
+            <li>Vehicles</li>
+            <li>Animals</li>
+            <li>Food and beverages</li>
+        </ul>
+
+        <h2 id="offline-mode">Offline Mode</h2>
+        <p>All processing happens locally on your device:</p>
+
+        <h3>Components</h3>
+        <ul>
+            <li><strong>Vosk</strong> - Offline speech recognition</li>
+            <li><strong>YOLOv8</strong> - Object detection model</li>
+            <li><strong>pyttsx3</strong> - Text-to-speech synthesis</li>
+        </ul>
+
+        <h3>Privacy</h3>
+        <p>No data is transmitted to external servers. All voice processing, object detection, and speech synthesis occur entirely on your local machine.</p>
+
+        <h2 id="settings">Settings</h2>
+        <p>Configuration is managed through <code>config.yaml</code>:</p>
+
+        <pre><code>camera:
+  device_id: 0
+  resolution: [640, 480]
+  fps: 30
+
+detection:
+  confidence_threshold: 0.5
+  model_path: "models/yolov8n.pt"
+  max_detections: 10
+
+speech:
+  language: "ar"
+  rate: 150
+  volume: 0.8
+
+recognition:
+  model_path: "models/vosk-model-ar"
+  trigger_words:
+    - "ابدأ"
+    - "اكتشف"
+    - "شوف"
+    - "انظر"
+    - "امسح"</code></pre>
+
+        <h2 id="customization">Customization</h2>
+        
+        <h3>Camera Settings</h3>
+        <p>Adjust camera resolution and FPS based on your hardware:</p>
+        <pre><code>camera:
+  resolution: [1280, 720]  # HD
+  fps: 15  # For slower systems</code></pre>
+
+        <h3>Detection Tuning</h3>
+        <p>Modify confidence threshold to balance detection sensitivity:</p>
+        <pre><code>detection:
+  confidence_threshold: 0.6  # Higher = fewer but more confident detections</code></pre>
+
+        <h3>Speech Customization</h3>
+        <p>Adjust speech rate and volume:</p>
+        <pre><code>speech:
+  rate: 120  # Slower speech
+  volume: 1.0  # Maximum volume</code></pre>
+
+        <h2 id="api">API Reference</h2>
+        <p>Use Abserny programmatically in your applications:</p>
+
+        <h3>Basic Usage</h3>
+        <pre><code>from abserny import Detector
+
+# Initialize detector
+detector = Detector()
+
+# Detect objects in image
+results = detector.detect('image.jpg')
+
+# Process results
+for obj in results:
+    print(f"{obj.name}: {obj.confidence:.2f}")</code></pre>
+
+        <h3>Voice-Activated Mode</h3>
+        <pre><code>from abserny import VoiceDetector
+
+# Initialize
+detector = VoiceDetector(language='ar')
+
+# Define callback
+@detector.on_detection
+def handle_detection(results):
+    for obj in results:
+        print(f"Found: {obj.name}")
+
+# Start listening
+detector.start_listening()
+detector.run()</code></pre>
+
+        <h2 id="troubleshooting">Troubleshooting</h2>
+        
+        <h3>Camera Issues</h3>
+        <p><strong>Problem:</strong> Camera not detected</p>
+        <ul>
+            <li>Check camera permissions in system settings</li>
+            <li>Ensure camera is not in use by another application</li>
+            <li>Try different <code>camera.device_id</code> values (0, 1, 2)</li>
+        </ul>
+
+        <h3>Voice Recognition Issues</h3>
+        <p><strong>Problem:</strong> Trigger words not recognized</p>
+        <ul>
+            <li>Verify microphone permissions</li>
+            <li>Check microphone volume levels</li>
+            <li>Reduce background noise</li>
+            <li>Speak clearly at normal pace</li>
+        </ul>
+
+        <h3>Performance Issues</h3>
+        <p><strong>Problem:</strong> Slow detection</p>
+        <ul>
+            <li>Lower camera resolution to 320x240</li>
+            <li>Ensure you're using yolov8n (nano) model</li>
+            <li>Close other resource-intensive applications</li>
+            <li>Increase <code>frame_skip</code> in configuration</li>
+        </ul>
+
+        <h3>Model Download Issues</h3>
+        <p><strong>Problem:</strong> Models fail to download</p>
+        <ul>
+            <li>Check internet connection</li>
+            <li>Download models manually from documentation</li>
+            <li>Verify models directory exists</li>
+        </ul>
+    </div>
+</div>

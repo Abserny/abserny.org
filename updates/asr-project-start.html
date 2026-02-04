@@ -1,0 +1,168 @@
+---
+layout: default
+title: ASR Project Initiated
+---
+
+<div class="container">
+    <div class="update-detail">
+        <div class="update-header">
+            <div class="update-date">January 20, 2024</div>
+            <h1>ASR Project Initiated</h1>
+            <div class="update-meta">Custom Arabic Speech Recognition Development Begins</div>
+        </div>
+
+        <div class="content">
+            <p>We're excited to announce the launch of the ASR (Automatic Speech Recognition) Project, a dedicated initiative to develop a custom Arabic speech recognition model optimized specifically for Abserny.</p>
+
+            <h2>Why a Custom Model?</h2>
+            <p>While Abserny v1.0 uses Vosk for speech recognition with excellent results, we've identified several areas where a custom model could provide significant improvements:</p>
+
+            <h3>Improved Accuracy</h3>
+            <ul>
+                <li>Better recognition of our specific trigger words</li>
+                <li>Support for various Arabic dialects and accents</li>
+                <li>Reduced false positives in noisy environments</li>
+                <li>Higher confidence scores for correct detections</li>
+            </ul>
+
+            <h3>Reduced Latency</h3>
+            <ul>
+                <li>Smaller model size for faster loading</li>
+                <li>Optimized inference for our specific use case</li>
+                <li>Lower computational requirements</li>
+                <li>Better real-time performance</li>
+            </ul>
+
+            <h3>Better Resource Efficiency</h3>
+            <ul>
+                <li>Lower CPU usage during continuous listening</li>
+                <li>Reduced memory footprint</li>
+                <li>Optimized for edge devices and mobile</li>
+            </ul>
+
+            <h2>Project Scope</h2>
+            <p>The ASR project is a comprehensive effort that includes:</p>
+
+            <h3>Dataset Creation</h3>
+            <p>We're building a custom dataset specifically for our trigger words:</p>
+            <ul>
+                <li>10,000+ recordings of Arabic trigger words</li>
+                <li>Multiple speakers representing different demographics</li>
+                <li>Various acoustic conditions (quiet, noisy, reverberant)</li>
+                <li>Different recording devices and quality levels</li>
+            </ul>
+
+            <h3>Model Development</h3>
+            <p>The technical approach includes:</p>
+            <ul>
+                <li>Deep learning architecture selection and testing</li>
+                <li>Custom training pipeline development</li>
+                <li>Hyperparameter optimization</li>
+                <li>Model compression and quantization</li>
+            </ul>
+
+            <h3>Integration Planning</h3>
+            <p>The model will be designed for seamless integration:</p>
+            <ul>
+                <li>Drop-in replacement for current Vosk implementation</li>
+                <li>Backwards compatible configuration</li>
+                <li>Optional fallback to Vosk</li>
+                <li>Easy model updates and improvements</li>
+            </ul>
+
+            <h2>Development Timeline</h2>
+
+            <h3>Phase 1: Foundation (Current - Q1 2024)</h3>
+            <ul>
+                <li>Dataset collection and preparation</li>
+                <li>Model architecture research and selection</li>
+                <li>Training infrastructure setup</li>
+                <li>Initial baseline model training</li>
+            </ul>
+
+            <h3>Phase 2: Training (Q2 2024)</h3>
+            <ul>
+                <li>Full dataset training</li>
+                <li>Model evaluation and benchmarking</li>
+                <li>Optimization and fine-tuning</li>
+                <li>Performance comparison with Vosk</li>
+            </ul>
+
+            <h3>Phase 3: Integration (Q3 2024)</h3>
+            <ul>
+                <li>Integration with Abserny Core</li>
+                <li>End-to-end testing</li>
+                <li>User acceptance testing</li>
+                <li>Documentation</li>
+            </ul>
+
+            <h3>Phase 4: Release (Q4 2024)</h3>
+            <ul>
+                <li>Beta release to testers</li>
+                <li>Feedback collection and improvements</li>
+                <li>Production release with Abserny v1.1</li>
+            </ul>
+
+            <h2>Technical Approach</h2>
+            <p>Our initial research points to a hybrid approach:</p>
+
+            <h3>Architecture</h3>
+            <ul>
+                <li>Feature extraction using MFCC or mel-spectrograms</li>
+                <li>LSTM-based acoustic model for temporal patterns</li>
+                <li>Attention mechanisms for better context</li>
+                <li>CTC loss for sequence-to-sequence learning</li>
+            </ul>
+
+            <h3>Optimization</h3>
+            <ul>
+                <li>Model quantization for smaller size</li>
+                <li>Pruning unnecessary connections</li>
+                <li>Knowledge distillation from larger models</li>
+                <li>TensorFlow Lite conversion for mobile</li>
+            </ul>
+
+            <h2>How You Can Help</h2>
+            <p>This is a community-driven project and we welcome contributions:</p>
+
+            <h3>Voice Contributions</h3>
+            <p>Help us build a diverse dataset:</p>
+            <ul>
+                <li>Record the trigger words in your voice</li>
+                <li>Record in different environments</li>
+                <li>Contribute recordings from different dialects</li>
+            </ul>
+            <p>We'll provide detailed recording guidelines and a simple submission process.</p>
+
+            <h3>Technical Contributions</h3>
+            <ul>
+                <li>Model architecture suggestions</li>
+                <li>Training pipeline improvements</li>
+                <li>Evaluation metrics and benchmarks</li>
+                <li>Documentation</li>
+            </ul>
+
+            <h2>Expected Impact</h2>
+            <p>Once integrated, the custom ASR model will:</p>
+            <ul>
+                <li>Improve trigger word recognition accuracy by an estimated 15-20%</li>
+                <li>Reduce voice activation latency by 30-40%</li>
+                <li>Decrease CPU usage during listening by ~25%</li>
+                <li>Enable better mobile performance</li>
+                <li>Support future expansion to more trigger words</li>
+            </ul>
+
+            <h2>Stay Updated</h2>
+            <p>Follow our progress:</p>
+            <ul>
+                <li><a href="{{ '/docs/asr-project' | relative_url }}">ASR Project Documentation</a></li>
+                <li><a href="https://github.com/yourusername/abserny-asr" target="_blank">GitHub Repository</a></li>
+                <li><a href="{{ '/updates' | relative_url }}">Project Updates</a></li>
+            </ul>
+
+            <p>We're excited about this initiative and believe it will significantly enhance the Abserny experience for all users.</p>
+        </div>
+
+        <a href="{{ '/updates' | relative_url }}" class="back-link">← Back to all updates</a>
+    </div>
+</div>
