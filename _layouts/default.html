@@ -3,40 +3,69 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>{% if page.title %}{{ page.title }} - {% endif %}{{ site.title }}</title>
+    <title>{% if page.title %}{{ page.title }} — {% endif %}Abserny Docs</title>
+    <meta name="description" content="{% if page.description %}{{ page.description }}{% else %}Technical documentation for Abserny, the voice-first AI vision assistant for the visually impaired.{% endif %}">
     <link rel="stylesheet" href="{{ '/assets/css/style.css' | relative_url }}">
 </head>
 <body>
-    <header>
-        <div class="header-content">
-            <a href="{{ '/' | relative_url }}" class="logo">
-                <img src="{{ '/assets/images/absernyy.png' | relative_url }}" alt="Abserny" >
+
+<header>
+    <div class="header-inner">
+        <a href="{{ '/' | relative_url }}" class="logo">
+            <img src="{{ '/assets/images/absernyy.png' | relative_url }}" alt="Abserny">
+        </a>
+
+        <nav class="header-nav">
+            <a href="{{ '/' | relative_url }}"              {% if page.url == '/' or page.url == '/index.html' %}class="active"{% endif %}>Home</a>
+            <a href="{{ '/documentation' | relative_url }}" {% if page.url contains '/docs' or page.url == '/documentation/' or page.url == '/documentation.html' %}class="active"{% endif %}>Docs</a>
+            <a href="{{ '/updates' | relative_url }}"       {% if page.url contains '/updates' %}class="active"{% endif %}>Updates</a>
+        </nav>
+
+        <div class="header-right">
+            <span class="header-badge">v1.0 Live</span>
+            <a href="https://abserny.github.io/" target="_blank" class="btn-header">
+                ↗ Main Site
             </a>
-            <nav>
-                <a href="{{ '/' | relative_url }}" {% if page.url == '/' %}class="active"{% endif %}>Home</a>
-                <a href="{{ '/documentation' | relative_url }}" {% if page.url contains '/docs' or page.url == '/documentation/' %}class="active"{% endif %}>Documentation</a>
-                <a href="{{ '/updates' | relative_url }}" {% if page.url contains '/updates' %}class="active"{% endif %}>Updates</a>
-            </nav>
-            <button class="menu-toggle">☰</button>
+            <a href="https://github.com/Abserny/Abserny-Mobile" target="_blank" class="btn-header">
+                GitHub
+            </a>
         </div>
-    </header>
 
-    <main>
-        {{ content }}
-    </main>
+        <button class="menu-toggle" id="menuToggle" aria-label="Toggle menu">
+            <svg width="20" height="20" viewBox="0 0 20 20" fill="currentColor">
+                <rect y="3" width="20" height="2" rx="1"/>
+                <rect y="9" width="20" height="2" rx="1"/>
+                <rect y="15" width="20" height="2" rx="1"/>
+            </svg>
+        </button>
+    </div>
+</header>
 
-    <footer>
-        <div class="footer-content">
-            <div class="footer-links">
-                <a href="https://abserny.com" target="_blank">Main Website</a>
-                <a href="https://github.com/Abserny/Abserdocs" target="_blank">Documentation Repository</a>
-            </div>
-            <div class="copyright">
-                © 2024 Abserny Project. All rights reserved.
-            </div>
+<nav class="mobile-nav" id="mobileNav">
+    <a href="{{ '/' | relative_url }}" {% if page.url == "/" or page.url == "/index.html" %}class="active"{% endif %}>Home</a>
+    <a href="{{ '/documentation' | relative_url }}" {% if page.url contains "/docs" or page.url == "/documentation/" or page.url == "/documentation.html" %}class="active"{% endif %}>Docs</a>
+    <a href="{{ '/updates' | relative_url }}" {% if page.url contains "/updates" %}class="active"{% endif %}>Updates</a>
+    <a href="https://abserny.github.io/" target="_blank">↗ Main Site</a>
+    <a href="https://github.com/Abserny/Abserny-Mobile/releases/download/v1.0/abserny-v1.0.apk">↓ Download APK</a>
+</nav>
+
+{{ content }}
+
+<footer>
+    <div class="footer-inner">
+        <div class="footer-links">
+            <a href="https://abserny.github.io/" target="_blank">abserny.com</a>
+            <a href="https://github.com/Abserny" target="_blank">GitHub</a>
+            <a href="{{ '/updates' | relative_url }}">Updates</a>
         </div>
-    </footer>
+        <div class="copyright">
+            © 2025–2026 Abserny, Faculty of Specific Education — Computer Science
+        </div>
+    </div>
+</footer>
 
-    <script src="{{ '/assets/js/main.js' | relative_url }}"></script>
+<div class="sidebar-overlay" id="sidebarOverlay"></div>
+
+<script src="{{ '/assets/js/main.js' | relative_url }}"></script>
 </body>
 </html>

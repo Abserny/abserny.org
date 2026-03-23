@@ -1,15 +1,43 @@
-title: Abserny
-description: Technical documentation and project updates
+title: Abserny Docs
+description: Technical documentation for the Abserny voice-first AI vision assistant.
 baseurl: "/abserny.org"
-url: "https://Abserny.github.io"
+url: "https://abserny.github.io"
 
+# Build settings
 markdown: kramdown
-plugins:
-  - jekyll-feed
+theme: null
 
+# Exclude from build
 exclude:
   - Gemfile
   - Gemfile.lock
-  - README.md
-  - node_modules
-  - vendor
+  - vendor/
+
+# Permalink style
+permalink: pretty
+
+# Collections
+collections:
+  updates:
+    output: true
+    permalink: /updates/:name/
+  docs:
+    output: true
+    permalink: /docs/:name/
+
+# Defaults
+defaults:
+  - scope:
+      path: "docs"
+      type: "docs"
+    values:
+      layout: doc
+  - scope:
+      path: "updates"
+      type: "updates"
+    values:
+      layout: default
+  - scope:
+      path: ""
+    values:
+      layout: default

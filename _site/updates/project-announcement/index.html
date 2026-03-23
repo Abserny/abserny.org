@@ -1,0 +1,93 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Project Announced — Abserny Docs</title>
+    <meta name="description" content="Technical documentation for Abserny, the voice-first AI vision assistant for the visually impaired.">
+    <link rel="stylesheet" href="/abserny.org/assets/css/style.css">
+</head>
+<body>
+
+<header>
+    <div class="header-inner">
+        <a href="/abserny.org/" class="logo">
+            <img src="/abserny.org/assets/images/absernyy.png" alt="Abserny">
+        </a>
+
+        <nav class="header-nav">
+            <a href="/abserny.org/"              >Home</a>
+            <a href="/abserny.org/documentation" >Docs</a>
+            <a href="/abserny.org/updates"       class="active">Updates</a>
+        </nav>
+
+        <div class="header-right">
+            <span class="header-badge">v1.0 Live</span>
+            <a href="https://abserny.github.io/" target="_blank" class="btn-header">
+                ↗ Main Site
+            </a>
+            <a href="https://github.com/Abserny/Abserny-Mobile" target="_blank" class="btn-header">
+                GitHub
+            </a>
+        </div>
+
+        <button class="menu-toggle" id="menuToggle" aria-label="Toggle menu">
+            <svg width="20" height="20" viewBox="0 0 20 20" fill="currentColor">
+                <rect y="3" width="20" height="2" rx="1"/>
+                <rect y="9" width="20" height="2" rx="1"/>
+                <rect y="15" width="20" height="2" rx="1"/>
+            </svg>
+        </button>
+    </div>
+</header>
+
+<nav class="mobile-nav" id="mobileNav">
+    <a href="/abserny.org/" >Home</a>
+    <a href="/abserny.org/documentation" >Docs</a>
+    <a href="/abserny.org/updates" class="active">Updates</a>
+    <a href="https://abserny.github.io/" target="_blank">↗ Main Site</a>
+    <a href="https://github.com/Abserny/Abserny-Mobile/releases/download/v1.0/abserny-v1.0.apk">↓ Download APK</a>
+</nav>
+
+<div class="full-page"><div class="update-detail">
+    <div class="update-header">
+        <div class="update-date">December 2025</div>
+        <h1>Abserny Announced</h1>
+        <div class="update-meta">Graduation Project Kickoff</div>
+    </div>
+    <div class="prose">
+        <p>Abserny (أبصرني, "help me see") is officially announced as a graduation project at the Faculty of Specific Education, Computer Science Department, Academic Year 2025–2026.</p>
+        <h2>Project vision</h2>
+        <p>The goal is a mobile application that lets visually impaired users understand their surroundings through gesture control and spoken AI descriptions — no screen interaction required at any point, including during setup.</p>
+        <h2>Design principles established</h2>
+        <ul>
+            <li><strong>Accessibility first.</strong> Every decision evaluated from the perspective of a user who cannot see the screen.</li>
+            <li><strong>Voice before visual.</strong> Audio output is the primary channel. Gestures are the only input method.</li>
+            <li><strong>Reliable by design.</strong> A deterministic FSM governs all interaction. Offline detection ensures the app always works.</li>
+            <li><strong>Bilingual.</strong> Full Arabic and English support at every layer from day one.</li>
+        </ul>
+        <h2>Technology decisions</h2>
+        <p>React Native with Expo SDK 54 selected for cross-platform reach. Gemini 2.0 Flash Lite selected as the AI backend for its latency, accuracy, and free-tier availability. ML Kit selected as the offline fallback for its reliability and zero-configuration on-device operation.</p>
+    </div>
+    <a href="/abserny.org/updates" class="read-more" style="margin-top:2rem;display:inline-flex;">← Back to all updates</a>
+</div></div>
+
+
+<footer>
+    <div class="footer-inner">
+        <div class="footer-links">
+            <a href="https://abserny.github.io/" target="_blank">abserny.com</a>
+            <a href="https://github.com/Abserny" target="_blank">GitHub</a>
+            <a href="/abserny.org/updates">Updates</a>
+        </div>
+        <div class="copyright">
+            © 2025–2026 Abserny, Faculty of Specific Education — Computer Science
+        </div>
+    </div>
+</footer>
+
+<div class="sidebar-overlay" id="sidebarOverlay"></div>
+
+<script src="/abserny.org/assets/js/main.js"></script>
+</body>
+</html>

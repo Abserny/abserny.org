@@ -3,37 +3,46 @@ layout: default
 title: Documentation
 ---
 
-<div class="container">
-    <div class="hero">
+<div class="full-page">
+
+    <div class="home-hero" style="padding-bottom:2rem; margin-bottom:2rem;">
+        <div class="home-hero-eyebrow">All Docs</div>
         <h1>Documentation</h1>
-        <p>Comprehensive guides and technical references for all Abserny projects.</p>
+        <p>Technical references for all Abserny projects. Select a project to get started.</p>
     </div>
 
-    <div class="section">
-        <h2>Available Documentation</h2>
-        <p>Select a project to view its complete documentation:</p>
-        
-        <div class="projects-grid">
-            <div class="project-card">
-                <span class="project-status active">Active</span>
-                <h3>Abserny Core</h3>
-                <p>Main object detection system with offline operation, voice control, and Arabic language support.</p>
-                <a href="{{ '/docs/abserny-core' | relative_url }}" class="btn">Read Documentation →</a>
-            </div>
+    <div class="section-title">Projects</div>
 
-            <div class="project-card">
-                <span class="project-status dev">In Development</span>
-                <h3>ASR Project</h3>
-                <p>Custom Arabic speech recognition system for improved voice command accuracy.</p>
-                <a href="{{ '/docs/asr-project' | relative_url }}" class="btn">Read Documentation →</a>
-            </div>
+    <div class="project-cards">
+        <div class="project-card">
+            <span class="badge badge-live">Live — Android</span>
+            <h3>Abserny Mobile</h3>
+            <p>
+                Full app documentation — gesture controls, FSM architecture, Gemini AI,
+                offline fallback, bilingual TTS, and onboarding.
+            </p>
+            <a href="{{ '/docs/mobile-app' | relative_url }}" class="btn-doc">Read docs →</a>
+        </div>
 
-            <div class="project-card">
-                <span class="project-status dev">In Development</span>
-                <h3>Mobile App</h3>
-                <p>Native mobile application for Android and iOS platforms.</p>
-                <a href="{{ '/docs/mobile-app' | relative_url }}" class="btn">Read Documentation →</a>
-            </div>
+        <div class="project-card">
+            <span class="badge badge-dev">In Progress</span>
+            <h3>AbserneyVision Model</h3>
+            <p>
+                Custom MobileNetV2 transfer learning model for 13 indoor categories.
+                Architecture, training details, and roadmap.
+            </p>
+            <a href="{{ '/docs/abserny-core' | relative_url }}" class="btn-doc">Read docs →</a>
+        </div>
+
+        <div class="project-card">
+            <span class="badge badge-planned">Planned</span>
+            <h3>ASR Project</h3>
+            <p>
+                Custom Arabic speech recognition for optional voice activation.
+                Research goals, architecture candidates, and dataset plan.
+            </p>
+            <a href="{{ '/docs/asr-project' | relative_url }}" class="btn-doc">Read docs →</a>
         </div>
     </div>
+
 </div>

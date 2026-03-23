@@ -1,0 +1,90 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Beta Testing Complete — Abserny Docs</title>
+    <meta name="description" content="Technical documentation for Abserny, the voice-first AI vision assistant for the visually impaired.">
+    <link rel="stylesheet" href="/abserny.org/assets/css/style.css">
+</head>
+<body>
+
+<header>
+    <div class="header-inner">
+        <a href="/abserny.org/" class="logo">
+            <img src="/abserny.org/assets/images/absernyy.png" alt="Abserny">
+        </a>
+
+        <nav class="header-nav">
+            <a href="/abserny.org/"              >Home</a>
+            <a href="/abserny.org/documentation" >Docs</a>
+            <a href="/abserny.org/updates"       class="active">Updates</a>
+        </nav>
+
+        <div class="header-right">
+            <span class="header-badge">v1.0 Live</span>
+            <a href="https://abserny.github.io/" target="_blank" class="btn-header">
+                ↗ Main Site
+            </a>
+            <a href="https://github.com/Abserny/Abserny-Mobile" target="_blank" class="btn-header">
+                GitHub
+            </a>
+        </div>
+
+        <button class="menu-toggle" id="menuToggle" aria-label="Toggle menu">
+            <svg width="20" height="20" viewBox="0 0 20 20" fill="currentColor">
+                <rect y="3" width="20" height="2" rx="1"/>
+                <rect y="9" width="20" height="2" rx="1"/>
+                <rect y="15" width="20" height="2" rx="1"/>
+            </svg>
+        </button>
+    </div>
+</header>
+
+<nav class="mobile-nav" id="mobileNav">
+    <a href="/abserny.org/" >Home</a>
+    <a href="/abserny.org/documentation" >Docs</a>
+    <a href="/abserny.org/updates" class="active">Updates</a>
+    <a href="https://abserny.github.io/" target="_blank">↗ Main Site</a>
+    <a href="https://github.com/Abserny/Abserny-Mobile/releases/download/v1.0/abserny-v1.0.apk">↓ Download APK</a>
+</nav>
+
+<div class="full-page"><div class="update-detail">
+    <div class="update-header">
+        <div class="update-date">January 2026</div>
+        <h1>Beta Testing Complete</h1>
+    </div>
+    <div class="prose">
+        <p>Internal beta testing concluded with all critical issues resolved ahead of the public v1.0 release.</p>
+        <h2>Improvements from testing</h2>
+        <ul>
+            <li>Double-tap recognition window tuned from 400 ms to 320 ms — reduces false activations</li>
+            <li>Long press threshold set at 700 ms — cleanly separated from double tap timing</li>
+            <li>Swipe threshold set at 60 px with 1.2:1 horizontal ratio — prevents accidental mode changes</li>
+            <li>TTS speech queue improved — new scan interrupts ongoing speech without audible glitch</li>
+            <li>Offline fallback latency reduced from 520 ms to 380 ms median via model quantization</li>
+            <li>Error state recovery time reduced to under 2 seconds</li>
+        </ul>
+    </div>
+    <a href="/abserny.org/updates" class="read-more" style="margin-top:2rem;display:inline-flex;">← Back to all updates</a>
+</div></div>
+
+
+<footer>
+    <div class="footer-inner">
+        <div class="footer-links">
+            <a href="https://abserny.github.io/" target="_blank">abserny.com</a>
+            <a href="https://github.com/Abserny" target="_blank">GitHub</a>
+            <a href="/abserny.org/updates">Updates</a>
+        </div>
+        <div class="copyright">
+            © 2025–2026 Abserny, Faculty of Specific Education — Computer Science
+        </div>
+    </div>
+</footer>
+
+<div class="sidebar-overlay" id="sidebarOverlay"></div>
+
+<script src="/abserny.org/assets/js/main.js"></script>
+</body>
+</html>

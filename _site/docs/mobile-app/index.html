@@ -1,15 +1,102 @@
----
-layout: doc
-title: Abserny Mobile — Documentation
-description: Complete technical documentation for the Abserny React Native mobile application.
----
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Abserny Mobile — Documentation — Abserny Docs</title>
+    <meta name="description" content="Complete technical documentation for the Abserny React Native mobile application.">
+    <link rel="stylesheet" href="/abserny.org/assets/css/style.css">
+</head>
+<body>
 
-<div class="doc-article">
+<header>
+    <div class="header-inner">
+        <a href="/abserny.org/" class="logo">
+            <img src="/abserny.org/assets/images/absernyy.png" alt="Abserny">
+        </a>
+
+        <nav class="header-nav">
+            <a href="/abserny.org/">Home</a>
+            <a href="/abserny.org/documentation" class="active">Docs</a>
+            <a href="/abserny.org/updates">Updates</a>
+        </nav>
+
+        <div class="header-right">
+            <span class="header-badge">v1.0 Live</span>
+            <a href="https://abserny.github.io/" target="_blank" class="btn-header">↗ Main Site</a>
+            <a href="https://github.com/Abserny/Abserny-Mobile" target="_blank" class="btn-header">GitHub</a>
+        </div>
+
+        <button class="menu-toggle" id="menuToggle" aria-label="Toggle menu">
+            <svg width="20" height="20" viewBox="0 0 20 20" fill="currentColor">
+                <rect y="3" width="20" height="2" rx="1"/>
+                <rect y="9" width="20" height="2" rx="1"/>
+                <rect y="15" width="20" height="2" rx="1"/>
+            </svg>
+        </button>
+    </div>
+</header>
+
+<nav class="mobile-nav" id="mobileNav">
+    <a href="/abserny.org/" >Home</a>
+    <a href="/abserny.org/documentation" class="active">Docs</a>
+    <a href="/abserny.org/updates" >Updates</a>
+    <a href="https://abserny.github.io/" target="_blank">↗ Main Site</a>
+    <a href="https://github.com/Abserny/Abserny-Mobile/releases/download/v1.0/abserny-v1.0.apk">↓ Download APK</a>
+</nav>
+
+<div class="page-shell">
+    <aside class="sidebar" id="sidebar">
+        <div class="sidebar-section">
+            <div class="sidebar-section-label">Projects</div>
+            <ul>
+                <li><a href="/abserny.org/docs/mobile-app"    class="active">Abserny Mobile</a></li>
+                <li><a href="/abserny.org/docs/abserny-core"  >AbserneyVision Model</a></li>
+                <li><a href="/abserny.org/docs/asr-project"   >ASR Project</a></li>
+            </ul>
+        </div>
+
+        <div class="sidebar-divider"></div>
+
+        
+        <div class="sidebar-section">
+            <div class="sidebar-section-label">Getting Started</div>
+            <ul>
+                <li><a href="#overview">Overview</a></li>
+                <li><a href="#requirements">Requirements</a></li>
+                <li><a href="#installation">Installation</a></li>
+            </ul>
+        </div>
+        <div class="sidebar-section">
+            <div class="sidebar-section-label">Using the App</div>
+            <ul>
+                <li><a href="#gestures">Gesture Controls</a></li>
+                <li><a href="#modes">Detection Modes</a></li>
+                <li><a href="#language">Language & Onboarding</a></li>
+            </ul>
+        </div>
+        <div class="sidebar-section">
+            <div class="sidebar-section-label">Technical</div>
+            <ul>
+                <li><a href="#fsm">FSM Architecture</a></li>
+                <li><a href="#ai">AI Pipeline</a></li>
+                <li><a href="#tts">Text-to-Speech</a></li>
+                <li><a href="#performance">Performance</a></li>
+                <li><a href="#stack">Tech Stack</a></li>
+                <li><a href="#repo">Repository</a></li>
+            </ul>
+        </div>
+
+        
+    </aside>
+
+    <main class="doc-main">
+        <div class="doc-article">
 
     <nav class="breadcrumb">
-        <a href="{{ '/' | relative_url }}">Home</a>
+        <a href="/abserny.org/">Home</a>
         <span class="breadcrumb-sep">/</span>
-        <a href="{{ '/documentation' | relative_url }}">Docs</a>
+        <a href="/abserny.org/documentation">Docs</a>
         <span class="breadcrumb-sep">/</span>
         <span class="breadcrumb-current">Abserny Mobile</span>
     </nav>
@@ -192,7 +279,7 @@ description: Complete technical documentation for the Abserny React Native mobil
             trained via transfer learning on ImageNet and Microsoft COCO.
             Targets 13 common indoor object categories. Current validation accuracy
             is 37% — dataset expansion is ongoing toward a target of 80%+.
-            See <a href="{{ '/docs/abserny-core' | relative_url }}">AbserneyVision documentation</a> for training details.
+            See <a href="/abserny.org/docs/abserny-core">AbserneyVision documentation</a> for training details.
         </p>
 
         <h2 id="tts">Text-to-Speech</h2>
@@ -265,3 +352,22 @@ description: Complete technical documentation for the Abserny React Native mobil
 
     </div>
 </div>
+
+    </main>
+</div>
+
+<footer>
+    <div class="footer-inner">
+        <div class="footer-links">
+            <a href="https://abserny.github.io/" target="_blank">abserny.com</a>
+            <a href="https://github.com/Abserny" target="_blank">GitHub</a>
+            <a href="/abserny.org/updates">Updates</a>
+        </div>
+        <div class="copyright">© 2025–2026 Abserny, Faculty of Specific Education — Computer Science</div>
+    </div>
+</footer>
+
+<div class="sidebar-overlay" id="sidebarOverlay"></div>
+<script src="/abserny.org/assets/js/main.js"></script>
+</body>
+</html>

@@ -1,26 +1,26 @@
 ---
 layout: default
-title: Mobile Development Started
+title: Core Architecture Complete
 ---
-
-<div class="container">
-    <div class="update-detail">
-        <div class="update-header">
-            <div class="update-date">January 15, 2024</div>
-            <h1>Mobile Development Started</h1>
-        </div>
-        <div class="content">
-            <p>Development of the Abserny mobile application has officially begun. The mobile version will bring accessible object detection to smartphones, making the system more portable and convenient.</p>
-            <h2>Why Mobile?</h2>
-            <p>Smartphones offer several advantages for Abserny users:</p>
-            <ul>
-                <li>Always with you - no need to carry additional devices</li>
-                <li>High-quality cameras built-in</li>
-                <li>Excellent accessibility features from iOS and Android</li>
-                <li>Haptic feedback for additional user feedback</li>
-            </ul>
-            <p>See the <a href="/docs/mobile-app">Mobile App documentation</a> for more details.</p>
-        </div>
-        <a href="/updates" class="back-link">← Back to all updates</a>
+<div class="full-page"><div class="update-detail">
+    <div class="update-header">
+        <div class="update-date">February 2026</div>
+        <h1>Core Architecture Complete</h1>
+        <div class="update-meta">All Systems Integrated</div>
     </div>
-</div>
+    <div class="prose">
+        <p>All major systems of the Abserny mobile app have been implemented and integrated into a single working application ahead of the v1.0 release.</p>
+        <h2>What was completed</h2>
+        <h3>FSM supervisor</h3>
+        <p>The deterministic finite state machine governing BOOT, READY, SCANNING, SPEAKING, and ERROR states is fully implemented. Race conditions between gesture events and ongoing scans are structurally prevented.</p>
+        <h3>Bilingual Gemini prompts</h3>
+        <p>Separate Arabic and English prompt templates for each of the four detection modes are finalized. Prompting in the target language produces significantly more natural spatial phrasing than translation.</p>
+        <h3>Offline fallback</h3>
+        <p>Silent automatic failover to ML Kit image labeling and OCR when offline or when the Gemini API is unavailable. Tested at 380 ms median latency with 0% failure rate across 50 trials.</p>
+        <h3>Interactive onboarding</h3>
+        <p>The voice-first onboarding sequence — spoken language picker followed by interactive gesture tutorial — is complete. Every step can be completed without looking at the screen.</p>
+        <h3>Spoken Settings menu</h3>
+        <p>Triple tap opens a fully spoken settings overlay, navigated by swipe, confirmed by double tap. Language change and tutorial replay are both accessible here.</p>
+    </div>
+    <a href="{{ '/updates' | relative_url }}" class="read-more" style="margin-top:2rem;display:inline-flex;">← Back to all updates</a>
+</div></div>

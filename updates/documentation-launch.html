@@ -2,65 +2,55 @@
 layout: default
 title: Documentation Site Launch
 ---
-
-<div class="container">
-    <div class="update-detail">
-        <div class="update-header">
-            <div class="update-date">January 28, 2024</div>
-            <h1>Documentation Site Launch</h1>
-            <div class="update-meta">Comprehensive Documentation Now Available</div>
-        </div>
-
-        <div class="content">
-            <p>We're pleased to announce the launch of the official Abserny documentation site. This dedicated platform provides comprehensive guides, technical references, and project updates all in one place.</p>
-
-            <h2>What's Included</h2>
-            <p>The documentation site covers all aspects of the Abserny ecosystem:</p>
-
-            <h3>Project Documentation</h3>
-            <ul>
-                <li><strong>Abserny Core:</strong> Complete guide to the main application</li>
-                <li><strong>ASR Project:</strong> Details on custom speech recognition development</li>
-                <li><strong>Mobile App:</strong> Information about mobile platform development</li>
-            </ul>
-
-            <h3>Technical Guides</h3>
-            <ul>
-                <li>Installation instructions for all platforms</li>
-                <li>Configuration and customization options</li>
-                <li>API reference for developers</li>
-                <li>Troubleshooting guides</li>
-            </ul>
-
-            <h3>Project Updates</h3>
-            <ul>
-                <li>Release announcements</li>
-                <li>Development progress reports</li>
-                <li>Feature updates</li>
-                <li>Community news</li>
-            </ul>
-
-            <h2>Design Philosophy</h2>
-            <p>The site is built with the same principles as Abserny itself:</p>
-            <ul>
-                <li><strong>Accessible:</strong> Clean design with good readability</li>
-                <li><strong>Organized:</strong> Clear structure for easy navigation</li>
-                <li><strong>Comprehensive:</strong> Detailed information for all user levels</li>
-                <li><strong>Up-to-date:</strong> Regular updates as projects evolve</li>
-            </ul>
-
-            <h2>Features</h2>
-            <ul>
-                <li>Interactive sidebar navigation with scroll tracking</li>
-                <li>Separate pages for each project</li>
-                <li>Detailed update announcements</li>
-                <li>Mobile-responsive design</li>
-                <li>Direct links to main website and repository</li>
-            </ul>
-
-            <p>Visit the documentation site and explore all available resources!</p>
-        </div>
-
-        <a href="/updates" class="back-link">← Back to all updates</a>
+<div class="full-page"><div class="update-detail">
+    <div class="update-header">
+        <div class="update-date">March 2026</div>
+        <h1>Documentation Site Launch</h1>
+        <div class="update-meta">Technical Reference Now Available</div>
     </div>
-</div>
+    <div class="prose">
+        <p>
+            The official Abserny documentation site is now live at
+            <a href="https://abserny.github.io/abserny.org/" target="_blank">abserny.github.io/abserny.org</a>.
+            It provides complete technical references for the mobile app, the AbserneyVision model,
+            and the planned ASR project.
+        </p>
+
+        <h2>What's covered</h2>
+
+        <h3>Abserny Mobile</h3>
+        <p>
+            Complete reference for the React Native app — gesture controls with exact thresholds,
+            FSM state diagram, all four detection modes, Gemini and ML Kit pipeline details,
+            bilingual TTS configuration, performance numbers, and installation instructions.
+        </p>
+
+        <h3>AbserneyVision Model</h3>
+        <p>
+            Architecture, training details, 13 target categories, current validation accuracy (37%),
+            mobile integration notes, and the roadmap toward 80%+ accuracy.
+        </p>
+
+        <h3>ASR Project</h3>
+        <p>
+            Research motivation, target command vocabulary, architecture candidates,
+            dataset plan, and development roadmap.
+        </p>
+
+        <h3>Updates feed</h3>
+        <p>
+            All project milestones, release announcements, and development progress
+            documented chronologically.
+        </p>
+
+        <h2>Design</h2>
+        <p>
+            The documentation site uses the same design language as
+            <a href="https://abserny.com" target="_blank">abserny.com</a> — same dark navy palette,
+            same Archivo typeface, same accent blue, same component patterns — formatted
+            specifically for technical documentation with sticky sidebar navigation,
+            scrollspy, metric grids, and gesture and FSM state tables.
+        </p>
+    </div>
+    <a href="{{ '/updates' | relative_url }}" class="read-more" style="margin-top:2rem;display:inline-flex;">← Back to all updates</a>
+</div></div>

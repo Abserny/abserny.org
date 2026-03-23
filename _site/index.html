@@ -3,96 +3,165 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Home - Abserny</title>
+    <title>Home — Abserny Docs</title>
+    <meta name="description" content="Technical documentation for Abserny, the voice-first AI vision assistant for the visually impaired.">
     <link rel="stylesheet" href="/abserny.org/assets/css/style.css">
 </head>
 <body>
-    <header>
-        <div class="header-content">
-            <a href="/abserny.org/" class="logo">
-                <img src="/abserny.org/assets/images/absernyy.png" alt="Abserny" >
+
+<header>
+    <div class="header-inner">
+        <a href="/abserny.org/" class="logo">
+            <img src="/abserny.org/assets/images/absernyy.png" alt="Abserny">
+        </a>
+
+        <nav class="header-nav">
+            <a href="/abserny.org/"              class="active">Home</a>
+            <a href="/abserny.org/documentation" >Docs</a>
+            <a href="/abserny.org/updates"       >Updates</a>
+        </nav>
+
+        <div class="header-right">
+            <span class="header-badge">v1.0 Live</span>
+            <a href="https://abserny.github.io/" target="_blank" class="btn-header">
+                ↗ Main Site
             </a>
-            <nav>
-                <a href="/abserny.org/" class="active">Home</a>
-                <a href="/abserny.org/documentation" >Documentation</a>
-                <a href="/abserny.org/updates" >Updates</a>
-            </nav>
-            <button class="menu-toggle">☰</button>
+            <a href="https://github.com/Abserny/Abserny-Mobile" target="_blank" class="btn-header">
+                GitHub
+            </a>
         </div>
-    </header>
 
-    <main>
-        <div class="container">
-    <div class="banner">
-        <img src="assets/images/docbanner.png" alt="banner" />
+        <button class="menu-toggle" id="menuToggle" aria-label="Toggle menu">
+            <svg width="20" height="20" viewBox="0 0 20 20" fill="currentColor">
+                <rect y="3" width="20" height="2" rx="1"/>
+                <rect y="9" width="20" height="2" rx="1"/>
+                <rect y="15" width="20" height="2" rx="1"/>
+            </svg>
+        </button>
     </div>
-    <div class="hero">
-        <!-- <h1>Abserny Documentation</h1> -->
-        <p>Complete technical documentation and project updates for Abserny - an offline object detection tool for visually impaired users.</p>
-        <p>أبصِرني - Accessible, offline, voice-activated object detection in Arabic.</p>
-    </div>
+</header>
 
-    <div class="section">
-        <h2>About This Site</h2>
-        <p>This site serves as the central documentation hub for the Abserny project and its related initiatives. Here you'll find comprehensive guides, technical details, and regular updates about our development progress.</p>
-        <p>The documentation is organized by project, making it easy to find information specific to each component of the Abserny ecosystem.</p>
-    </div>
+<nav class="mobile-nav" id="mobileNav">
+    <a href="/abserny.org/" class="active">Home</a>
+    <a href="/abserny.org/documentation" >Docs</a>
+    <a href="/abserny.org/updates" >Updates</a>
+    <a href="https://abserny.github.io/" target="_blank">↗ Main Site</a>
+    <a href="https://github.com/Abserny/Abserny-Mobile/releases/download/v1.0/abserny-v1.0.apk">↓ Download APK</a>
+</nav>
 
-    <div class="section">
-        <h2>Projects</h2>
-        <p>Explore documentation for each of our projects:</p>
-        
-        <div class="projects-grid">
-            <div class="project-card">
-                <span class="project-status active">Active</span>
-                <h3>Abserny Core</h3>
-                <p>The main object detection system with voice control, offline operation, and Arabic language support for visually impaired users.</p>
-                <a href="/abserny.org/docs/abserny-core" class="btn">View Documentation</a>
-            </div>
+<div class="full-page">
 
-            <div class="project-card">
-                <span class="project-status dev">In Development</span>
-                <h3>ASR Project</h3>
-                <p>Custom Arabic speech recognition system optimized for voice commands and environmental conditions specific to Abserny.</p>
-                <a href="/abserny.org/docs/asr-project" class="btn">View Documentation</a>
-            </div>
-
-            <div class="project-card">
-                <span class="project-status dev">In Development</span>
-                <h3>Mobile App</h3>
-                <p>Native mobile application bringing Abserny's functionality to smartphones for increased portability and accessibility.</p>
-                <a href="/abserny.org/docs/mobile-app" class="btn">View Documentation</a>
-            </div>
+    <div class="home-hero">
+        <div class="home-hero-eyebrow">Documentation</div>
+        <h1>Abserny<br><span>Technical Reference</span></h1>
+        <p>
+            Complete documentation for Abserny (أبصرني), a voice-first AI vision assistant
+            for visually impaired users. React Native, Android, Gemini 2.0, offline-capable.
+        </p>
+        <p>
+            Graduation project — Faculty of Specific Education, Computer Science Department,
+            Academic Year 2025–2026.
+        </p>
+        <div class="home-hero-actions">
+            <a href="/abserny.org/docs/mobile-app" class="btn-primary">Read the Docs →</a>
+            <a href="https://github.com/Abserny/Abserny-Mobile/releases/download/v1.0/abserny-v1.0.apk" class="btn-secondary">↓ Download APK</a>
         </div>
     </div>
 
-    <div class="section">
-        <h2>Purpose</h2>
-        <p>Abserny is a graduation project focused on creating accessible technology for visually impaired Arabic-speaking users. This documentation provides all necessary information for understanding, installing, using, and contributing to the system.</p>
-        <p>The project emphasizes:</p>
-        <ul style="color: var(--text-secondary); padding-left: 1.5rem;">
-            <li>Complete offline operation for privacy and reliability</li>
-            <li>Arabic language support throughout the system</li>
-            <li>Voice-activated controls for hands-free operation</li>
-            <li>Accessibility-first design principles</li>
-        </ul>
+    <div class="section-title">Projects</div>
+
+    <div class="project-cards">
+        <div class="project-card">
+            <span class="badge badge-live">Live — Android</span>
+            <h3>Abserny Mobile</h3>
+            <p>
+                The full React Native application. Gesture control, FSM architecture,
+                Gemini AI vision, bilingual TTS, offline ML Kit fallback, and voice-first onboarding.
+            </p>
+            <a href="/abserny.org/docs/mobile-app" class="btn-doc">View docs →</a>
+        </div>
+
+        <div class="project-card">
+            <span class="badge badge-dev">In Progress</span>
+            <h3>AbserneyVision Model</h3>
+            <p>
+                Custom MobileNetV2 model trained via transfer learning on ImageNet and COCO.
+                Targets 13 indoor categories as a dedicated offline detection layer.
+            </p>
+            <a href="/abserny.org/docs/abserny-core" class="btn-doc">View docs →</a>
+        </div>
+
+        <div class="project-card">
+            <span class="badge badge-planned">Planned</span>
+            <h3>ASR Project</h3>
+            <p>
+                Custom Arabic speech recognition model optimised for Abserny's specific
+                trigger vocabulary and acoustic conditions.
+            </p>
+            <a href="/abserny.org/docs/asr-project" class="btn-doc">View docs →</a>
+        </div>
     </div>
+
+    <div class="section-title" style="margin-top:3rem">Key Numbers</div>
+
+    <div class="metric-grid">
+        <div class="metric-cell">
+            <div class="metric-value">1,430<span class="metric-unit">ms</span></div>
+            <div class="metric-label">Online median latency</div>
+        </div>
+        <div class="metric-cell">
+            <div class="metric-value">380<span class="metric-unit">ms</span></div>
+            <div class="metric-label">Offline median latency</div>
+        </div>
+        <div class="metric-cell">
+            <div class="metric-value">5</div>
+            <div class="metric-label">Gesture controls</div>
+        </div>
+        <div class="metric-cell">
+            <div class="metric-value">0%</div>
+            <div class="metric-label">Offline failure rate</div>
+        </div>
+        <div class="metric-cell">
+            <div class="metric-value">87%</div>
+            <div class="metric-label">Spatial term rate</div>
+        </div>
+    </div>
+
+    <div class="section-title" style="margin-top:3rem">Latest Updates</div>
+
+    <ul class="updates-list">
+        <li class="update-card">
+            <div class="update-date">March 2026</div>
+            <h2><a href="/abserny.org/updates/v1-0-release">Abserny v1.0 Released for Android</a></h2>
+            <p>The first public release of Abserny is available on GitHub Releases as a direct APK download. Includes full gesture control, bilingual TTS, Gemini 2.0 Flash Lite integration, and offline ML Kit fallback.</p>
+            <a href="/abserny.org/updates/v1-0-release" class="read-more">Read full update →</a>
+        </li>
+        <li class="update-card">
+            <div class="update-date">February 2026</div>
+            <h2><a href="/abserny.org/updates/mobile-development">Mobile Development Complete</a></h2>
+            <p>Core architecture finalized — FSM supervisor, bilingual prompts, 4 detection modes, voice-first onboarding, and spoken Settings menu all implemented and tested.</p>
+            <a href="/abserny.org/updates/mobile-development" class="read-more">Read full update →</a>
+        </li>
+    </ul>
+
 </div>
 
-    </main>
 
-    <footer>
-        <div class="footer-content">
-            <div class="footer-links">
-                <a href="https://abserny.com" target="_blank">Main Website</a>
-                <a href="https://github.com/Abserny/Abserdocs" target="_blank">Documentation Repository</a>
-            </div>
-            <div class="copyright">
-                © 2024 Abserny Project. All rights reserved.
-            </div>
+<footer>
+    <div class="footer-inner">
+        <div class="footer-links">
+            <a href="https://abserny.github.io/" target="_blank">abserny.com</a>
+            <a href="https://github.com/Abserny" target="_blank">GitHub</a>
+            <a href="/abserny.org/updates">Updates</a>
         </div>
-    </footer>
+        <div class="copyright">
+            © 2025–2026 Abserny, Faculty of Specific Education — Computer Science
+        </div>
+    </div>
+</footer>
 
-    <script src="/abserny.org/assets/js/main.js"></script>
+<div class="sidebar-overlay" id="sidebarOverlay"></div>
+
+<script src="/abserny.org/assets/js/main.js"></script>
 </body>
 </html>

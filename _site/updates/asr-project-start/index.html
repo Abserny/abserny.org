@@ -1,0 +1,122 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>ASR Project Initiated — Abserny Docs</title>
+    <meta name="description" content="Technical documentation for Abserny, the voice-first AI vision assistant for the visually impaired.">
+    <link rel="stylesheet" href="/abserny.org/assets/css/style.css">
+</head>
+<body>
+
+<header>
+    <div class="header-inner">
+        <a href="/abserny.org/" class="logo">
+            <img src="/abserny.org/assets/images/absernyy.png" alt="Abserny">
+        </a>
+
+        <nav class="header-nav">
+            <a href="/abserny.org/"              >Home</a>
+            <a href="/abserny.org/documentation" >Docs</a>
+            <a href="/abserny.org/updates"       class="active">Updates</a>
+        </nav>
+
+        <div class="header-right">
+            <span class="header-badge">v1.0 Live</span>
+            <a href="https://abserny.github.io/" target="_blank" class="btn-header">
+                ↗ Main Site
+            </a>
+            <a href="https://github.com/Abserny/Abserny-Mobile" target="_blank" class="btn-header">
+                GitHub
+            </a>
+        </div>
+
+        <button class="menu-toggle" id="menuToggle" aria-label="Toggle menu">
+            <svg width="20" height="20" viewBox="0 0 20 20" fill="currentColor">
+                <rect y="3" width="20" height="2" rx="1"/>
+                <rect y="9" width="20" height="2" rx="1"/>
+                <rect y="15" width="20" height="2" rx="1"/>
+            </svg>
+        </button>
+    </div>
+</header>
+
+<nav class="mobile-nav" id="mobileNav">
+    <a href="/abserny.org/" >Home</a>
+    <a href="/abserny.org/documentation" >Docs</a>
+    <a href="/abserny.org/updates" class="active">Updates</a>
+    <a href="https://abserny.github.io/" target="_blank">↗ Main Site</a>
+    <a href="https://github.com/Abserny/Abserny-Mobile/releases/download/v1.0/abserny-v1.0.apk">↓ Download APK</a>
+</nav>
+
+<div class="full-page"><div class="update-detail">
+    <div class="update-header">
+        <div class="update-date">January 2026</div>
+        <h1>ASR Project Initiated</h1>
+        <div class="update-meta">Custom Arabic Speech Recognition Research Begins</div>
+    </div>
+    <div class="prose">
+        <p>
+            With Abserny v1.0 using a gesture-only interface, we are beginning exploratory
+            research into a custom Arabic speech recognition model as a potential optional
+            future input method.
+        </p>
+
+        <h2>Why explore ASR at all?</h2>
+        <p>
+            The deliberate choice to use gestures rather than voice in v1.0 eliminates
+            false positives from background speech, TV audio, and ambient noise.
+            However, some users may find situations where gestures are inconvenient.
+            A highly accurate, vocabulary-limited custom model could enable an optional
+            voice mode without the reliability issues of general-purpose recognition.
+        </p>
+
+        <h2>Research scope</h2>
+        <h3>Architecture candidates under evaluation</h3>
+        <ul>
+            <li>Keyword spotting CNN on MFCC features — smallest, fastest</li>
+            <li>Whisper Tiny fine-tuned on Abserny vocabulary</li>
+            <li>Wav2Vec2 Arabic fine-tuned for command detection</li>
+        </ul>
+
+        <h3>Target vocabulary</h3>
+        <p>
+            Rather than full speech recognition, the model would cover a small set of
+            commands: scan trigger, repeat last, change mode, open settings, and cancel.
+            A vocabulary-limited model is smaller, faster, and has a lower false-positive rate.
+        </p>
+
+        <h3>Key constraints</h3>
+        <ul>
+            <li>Must run entirely on-device, no internet required</li>
+            <li>False-positive rate must be extremely low — any spurious trigger disrupts the user</li>
+            <li>Must work in noisy environments typical of daily use</li>
+            <li>Model size must be practical for mid-range Android hardware</li>
+        </ul>
+
+        <p>
+            Follow progress at the <a href="/abserny.org/docs/asr-project">ASR Project documentation</a>.
+        </p>
+    </div>
+    <a href="/abserny.org/updates" class="read-more" style="margin-top:2rem;display:inline-flex;">← Back to all updates</a>
+</div></div>
+
+
+<footer>
+    <div class="footer-inner">
+        <div class="footer-links">
+            <a href="https://abserny.github.io/" target="_blank">abserny.com</a>
+            <a href="https://github.com/Abserny" target="_blank">GitHub</a>
+            <a href="/abserny.org/updates">Updates</a>
+        </div>
+        <div class="copyright">
+            © 2025–2026 Abserny, Faculty of Specific Education — Computer Science
+        </div>
+    </div>
+</footer>
+
+<div class="sidebar-overlay" id="sidebarOverlay"></div>
+
+<script src="/abserny.org/assets/js/main.js"></script>
+</body>
+</html>

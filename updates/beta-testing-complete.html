@@ -2,24 +2,22 @@
 layout: default
 title: Beta Testing Complete
 ---
-
-<div class="container">
-    <div class="update-detail">
-        <div class="update-header">
-            <div class="update-date">January 10, 2024</div>
-            <h1>Beta Testing Complete</h1>
-        </div>
-        <div class="content">
-            <p>Beta testing phase concluded successfully with valuable feedback from testers. Several improvements have been implemented based on user feedback.</p>
-            <h2>Key Improvements</h2>
-            <ul>
-                <li>Enhanced voice recognition accuracy</li>
-                <li>Faster detection processing</li>
-                <li>Better error handling and user feedback</li>
-                <li>Improved user interface accessibility</li>
-            </ul>
-            <p>All improvements are included in the v1.0 release.</p>
-        </div>
-        <a href="/updates" class="back-link">← Back to all updates</a>
+<div class="full-page"><div class="update-detail">
+    <div class="update-header">
+        <div class="update-date">January 2026</div>
+        <h1>Beta Testing Complete</h1>
     </div>
-</div>
+    <div class="prose">
+        <p>Internal beta testing concluded with all critical issues resolved ahead of the public v1.0 release.</p>
+        <h2>Improvements from testing</h2>
+        <ul>
+            <li>Double-tap recognition window tuned from 400 ms to 320 ms — reduces false activations</li>
+            <li>Long press threshold set at 700 ms — cleanly separated from double tap timing</li>
+            <li>Swipe threshold set at 60 px with 1.2:1 horizontal ratio — prevents accidental mode changes</li>
+            <li>TTS speech queue improved — new scan interrupts ongoing speech without audible glitch</li>
+            <li>Offline fallback latency reduced from 520 ms to 380 ms median via model quantization</li>
+            <li>Error state recovery time reduced to under 2 seconds</li>
+        </ul>
+    </div>
+    <a href="{{ '/updates' | relative_url }}" class="read-more" style="margin-top:2rem;display:inline-flex;">← Back to all updates</a>
+</div></div>

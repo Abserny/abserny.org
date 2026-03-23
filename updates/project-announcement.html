@@ -1,26 +1,26 @@
 ---
 layout: default
-title: Project Announcement
+title: Project Announced
 ---
-
-<div class="container">
-    <div class="update-detail">
-        <div class="update-header">
-            <div class="update-date">January 5, 2024</div>
-            <h1>Project Announcement</h1>
-        </div>
-        <div class="content">
-            <p>Abserny (أبصِرني) is officially announced as a graduation project focused on creating accessible technology for visually impaired Arabic-speaking users.</p>
-            <h2>Project Vision</h2>
-            <p>Our goal is to provide a privacy-first, offline object detection system that empowers visually impaired users through:</p>
-            <ul>
-                <li>Voice-activated controls for hands-free operation</li>
-                <li>Natural Arabic language interaction</li>
-                <li>Complete offline functionality for privacy</li>
-                <li>Accessible design from the ground up</li>
-            </ul>
-            <p>Follow our progress through this documentation site!</p>
-        </div>
-        <a href="/updates" class="back-link">← Back to all updates</a>
+<div class="full-page"><div class="update-detail">
+    <div class="update-header">
+        <div class="update-date">December 2025</div>
+        <h1>Abserny Announced</h1>
+        <div class="update-meta">Graduation Project Kickoff</div>
     </div>
-</div>
+    <div class="prose">
+        <p>Abserny (أبصرني, "help me see") is officially announced as a graduation project at the Faculty of Specific Education, Computer Science Department, Academic Year 2025–2026.</p>
+        <h2>Project vision</h2>
+        <p>The goal is a mobile application that lets visually impaired users understand their surroundings through gesture control and spoken AI descriptions — no screen interaction required at any point, including during setup.</p>
+        <h2>Design principles established</h2>
+        <ul>
+            <li><strong>Accessibility first.</strong> Every decision evaluated from the perspective of a user who cannot see the screen.</li>
+            <li><strong>Voice before visual.</strong> Audio output is the primary channel. Gestures are the only input method.</li>
+            <li><strong>Reliable by design.</strong> A deterministic FSM governs all interaction. Offline detection ensures the app always works.</li>
+            <li><strong>Bilingual.</strong> Full Arabic and English support at every layer from day one.</li>
+        </ul>
+        <h2>Technology decisions</h2>
+        <p>React Native with Expo SDK 54 selected for cross-platform reach. Gemini 2.0 Flash Lite selected as the AI backend for its latency, accuracy, and free-tier availability. ML Kit selected as the offline fallback for its reliability and zero-configuration on-device operation.</p>
+    </div>
+    <a href="{{ '/updates' | relative_url }}" class="read-more" style="margin-top:2rem;display:inline-flex;">← Back to all updates</a>
+</div></div>

@@ -1,0 +1,146 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>{% if page.title %}{{ page.title }} — {% endif %}Abserny Docs</title>
+    <meta name="description" content="{% if page.description %}{{ page.description }}{% else %}Technical documentation for Abserny.{% endif %}">
+    <link rel="stylesheet" href="{{ '/assets/css/style.css' | relative_url }}">
+</head>
+<body>
+
+<header>
+    <div class="header-inner">
+        <a href="{{ '/' | relative_url }}" class="logo">
+            <img src="{{ '/assets/images/absernyy.png' | relative_url }}" alt="Abserny">
+        </a>
+
+        <nav class="header-nav">
+            <a href="{{ '/' | relative_url }}">Home</a>
+            <a href="{{ '/documentation' | relative_url }}" class="active">Docs</a>
+            <a href="{{ '/updates' | relative_url }}">Updates</a>
+        </nav>
+
+        <div class="header-right">
+            <span class="header-badge">v1.0 Live</span>
+            <a href="https://abserny.github.io/" target="_blank" class="btn-header">↗ Main Site</a>
+            <a href="https://github.com/Abserny/Abserny-Mobile" target="_blank" class="btn-header">GitHub</a>
+        </div>
+
+        <button class="menu-toggle" id="menuToggle" aria-label="Toggle menu">
+            <svg width="20" height="20" viewBox="0 0 20 20" fill="currentColor">
+                <rect y="3" width="20" height="2" rx="1"/>
+                <rect y="9" width="20" height="2" rx="1"/>
+                <rect y="15" width="20" height="2" rx="1"/>
+            </svg>
+        </button>
+    </div>
+</header>
+
+<nav class="mobile-nav" id="mobileNav">
+    <a href="{{ '/' | relative_url }}" >Home</a>
+    <a href="{{ '/documentation' | relative_url }}" class="active">Docs</a>
+    <a href="{{ '/updates' | relative_url }}" >Updates</a>
+    <a href="https://abserny.github.io/" target="_blank">↗ Main Site</a>
+    <a href="https://github.com/Abserny/Abserny-Mobile/releases/download/v1.0/abserny-v1.0.apk">↓ Download APK</a>
+</nav>
+
+<div class="page-shell">
+    <aside class="sidebar" id="sidebar">
+        <div class="sidebar-section">
+            <div class="sidebar-section-label">Projects</div>
+            <ul>
+                <li><a href="{{ '/docs/mobile-app' | relative_url }}"    {% if page.url contains 'mobile-app' %}class="active"{% endif %}>Abserny Mobile</a></li>
+                <li><a href="{{ '/docs/abserny-core' | relative_url }}"  {% if page.url contains 'abserny-core' %}class="active"{% endif %}>AbserneyVision Model</a></li>
+                <li><a href="{{ '/docs/asr-project' | relative_url }}"   {% if page.url contains 'asr-project' %}class="active"{% endif %}>ASR Project</a></li>
+            </ul>
+        </div>
+
+        <div class="sidebar-divider"></div>
+
+        {% if page.url contains 'mobile-app' %}
+        <div class="sidebar-section">
+            <div class="sidebar-section-label">Getting Started</div>
+            <ul>
+                <li><a href="#overview">Overview</a></li>
+                <li><a href="#requirements">Requirements</a></li>
+                <li><a href="#installation">Installation</a></li>
+            </ul>
+        </div>
+        <div class="sidebar-section">
+            <div class="sidebar-section-label">Using the App</div>
+            <ul>
+                <li><a href="#gestures">Gesture Controls</a></li>
+                <li><a href="#modes">Detection Modes</a></li>
+                <li><a href="#language">Language & Onboarding</a></li>
+            </ul>
+        </div>
+        <div class="sidebar-section">
+            <div class="sidebar-section-label">Technical</div>
+            <ul>
+                <li><a href="#fsm">FSM Architecture</a></li>
+                <li><a href="#ai">AI Pipeline</a></li>
+                <li><a href="#tts">Text-to-Speech</a></li>
+                <li><a href="#performance">Performance</a></li>
+                <li><a href="#stack">Tech Stack</a></li>
+                <li><a href="#repo">Repository</a></li>
+            </ul>
+        </div>
+
+        {% elsif page.url contains 'abserny-core' %}
+        <div class="sidebar-section">
+            <div class="sidebar-section-label">Model</div>
+            <ul>
+                <li><a href="#overview">Overview</a></li>
+                <li><a href="#architecture">Architecture</a></li>
+                <li><a href="#categories">Categories</a></li>
+            </ul>
+        </div>
+        <div class="sidebar-section">
+            <div class="sidebar-section-label">Development</div>
+            <ul>
+                <li><a href="#training">Training Details</a></li>
+                <li><a href="#integration">Mobile Integration</a></li>
+                <li><a href="#roadmap">Roadmap</a></li>
+            </ul>
+        </div>
+
+        {% elsif page.url contains 'asr-project' %}
+        <div class="sidebar-section">
+            <div class="sidebar-section-label">Overview</div>
+            <ul>
+                <li><a href="#motivation">Motivation</a></li>
+                <li><a href="#goals">Project Goals</a></li>
+                <li><a href="#commands">Target Commands</a></li>
+            </ul>
+        </div>
+        <div class="sidebar-section">
+            <div class="sidebar-section-label">Development</div>
+            <ul>
+                <li><a href="#approach">Technical Approach</a></li>
+                <li><a href="#roadmap">Roadmap</a></li>
+            </ul>
+        </div>
+        {% endif %}
+    </aside>
+
+    <main class="doc-main">
+        {{ content }}
+    </main>
+</div>
+
+<footer>
+    <div class="footer-inner">
+        <div class="footer-links">
+            <a href="https://abserny.github.io/" target="_blank">abserny.com</a>
+            <a href="https://github.com/Abserny" target="_blank">GitHub</a>
+            <a href="{{ '/updates' | relative_url }}">Updates</a>
+        </div>
+        <div class="copyright">© 2025–2026 Abserny, Faculty of Specific Education — Computer Science</div>
+    </div>
+</footer>
+
+<div class="sidebar-overlay" id="sidebarOverlay"></div>
+<script src="{{ '/assets/js/main.js' | relative_url }}"></script>
+</body>
+</html>

@@ -1,15 +1,89 @@
----
-layout: doc
-title: ASR Project — Documentation
-description: Custom Arabic speech recognition model planned for Abserny voice command detection.
----
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>ASR Project — Documentation — Abserny Docs</title>
+    <meta name="description" content="Custom Arabic speech recognition model planned for Abserny voice command detection.">
+    <link rel="stylesheet" href="/abserny.org/assets/css/style.css">
+</head>
+<body>
 
-<div class="doc-article">
+<header>
+    <div class="header-inner">
+        <a href="/abserny.org/" class="logo">
+            <img src="/abserny.org/assets/images/absernyy.png" alt="Abserny">
+        </a>
+
+        <nav class="header-nav">
+            <a href="/abserny.org/">Home</a>
+            <a href="/abserny.org/documentation" class="active">Docs</a>
+            <a href="/abserny.org/updates">Updates</a>
+        </nav>
+
+        <div class="header-right">
+            <span class="header-badge">v1.0 Live</span>
+            <a href="https://abserny.github.io/" target="_blank" class="btn-header">↗ Main Site</a>
+            <a href="https://github.com/Abserny/Abserny-Mobile" target="_blank" class="btn-header">GitHub</a>
+        </div>
+
+        <button class="menu-toggle" id="menuToggle" aria-label="Toggle menu">
+            <svg width="20" height="20" viewBox="0 0 20 20" fill="currentColor">
+                <rect y="3" width="20" height="2" rx="1"/>
+                <rect y="9" width="20" height="2" rx="1"/>
+                <rect y="15" width="20" height="2" rx="1"/>
+            </svg>
+        </button>
+    </div>
+</header>
+
+<nav class="mobile-nav" id="mobileNav">
+    <a href="/abserny.org/" >Home</a>
+    <a href="/abserny.org/documentation" class="active">Docs</a>
+    <a href="/abserny.org/updates" >Updates</a>
+    <a href="https://abserny.github.io/" target="_blank">↗ Main Site</a>
+    <a href="https://github.com/Abserny/Abserny-Mobile/releases/download/v1.0/abserny-v1.0.apk">↓ Download APK</a>
+</nav>
+
+<div class="page-shell">
+    <aside class="sidebar" id="sidebar">
+        <div class="sidebar-section">
+            <div class="sidebar-section-label">Projects</div>
+            <ul>
+                <li><a href="/abserny.org/docs/mobile-app"    >Abserny Mobile</a></li>
+                <li><a href="/abserny.org/docs/abserny-core"  >AbserneyVision Model</a></li>
+                <li><a href="/abserny.org/docs/asr-project"   class="active">ASR Project</a></li>
+            </ul>
+        </div>
+
+        <div class="sidebar-divider"></div>
+
+        
+        <div class="sidebar-section">
+            <div class="sidebar-section-label">Overview</div>
+            <ul>
+                <li><a href="#motivation">Motivation</a></li>
+                <li><a href="#goals">Project Goals</a></li>
+                <li><a href="#commands">Target Commands</a></li>
+            </ul>
+        </div>
+        <div class="sidebar-section">
+            <div class="sidebar-section-label">Development</div>
+            <ul>
+                <li><a href="#approach">Technical Approach</a></li>
+                <li><a href="#roadmap">Roadmap</a></li>
+            </ul>
+        </div>
+        
+    </aside>
+
+    <main class="doc-main">
+        <div class="doc-article">
 
     <nav class="breadcrumb">
-        <a href="{{ '/' | relative_url }}">Home</a>
+        <a href="/abserny.org/">Home</a>
         <span class="breadcrumb-sep">/</span>
-        <a href="{{ '/documentation' | relative_url }}">Docs</a>
+        <a href="/abserny.org/documentation">Docs</a>
         <span class="breadcrumb-sep">/</span>
         <span class="breadcrumb-current">ASR Project</span>
     </nav>
@@ -100,3 +174,22 @@ description: Custom Arabic speech recognition model planned for Abserny voice co
 
     </div>
 </div>
+
+    </main>
+</div>
+
+<footer>
+    <div class="footer-inner">
+        <div class="footer-links">
+            <a href="https://abserny.github.io/" target="_blank">abserny.com</a>
+            <a href="https://github.com/Abserny" target="_blank">GitHub</a>
+            <a href="/abserny.org/updates">Updates</a>
+        </div>
+        <div class="copyright">© 2025–2026 Abserny, Faculty of Specific Education — Computer Science</div>
+    </div>
+</footer>
+
+<div class="sidebar-overlay" id="sidebarOverlay"></div>
+<script src="/abserny.org/assets/js/main.js"></script>
+</body>
+</html>
