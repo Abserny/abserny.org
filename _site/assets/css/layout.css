@@ -1,0 +1,120 @@
+/* ── Page shell (sidebar + content row on doc pages) ── */
+.page-shell {
+    display: flex;
+    margin-top: var(--header-h);
+    min-height: calc(100vh - var(--header-h));
+}
+
+/* ── Sidebar ── */
+.sidebar {
+    width: var(--sidebar-w);
+    flex-shrink: 0;
+    position: sticky;
+    top: var(--header-h);
+    height: calc(100vh - var(--header-h));
+    overflow-y: auto;
+    border-right: 1px solid var(--border);
+    padding: var(--sp-6) 0 var(--sp-12);
+    background: rgba(15, 23, 42, 0.50);
+    scrollbar-width: thin;
+    scrollbar-color: rgba(96, 165, 250, 0.20) transparent;
+}
+.sidebar::-webkit-scrollbar       { width: 4px; }
+.sidebar::-webkit-scrollbar-thumb { background: rgba(96, 165, 250, 0.20); border-radius: 2px; }
+
+/* Section group */
+.sidebar-section { padding: 0 var(--sp-5) var(--sp-6); }
+
+.sidebar-section-label {
+    font-size: var(--fs-xs);      /* 12 px — minimum WCAG readable */
+    font-weight: 700;
+    letter-spacing: 0.12em;
+    text-transform: uppercase;
+    color: var(--text-tertiary);
+    margin-bottom: var(--sp-2);
+    padding: 0 var(--sp-1);
+}
+
+.sidebar ul { list-style: none; }
+
+.sidebar li a {
+    display: flex;
+    align-items: center;
+    gap: var(--sp-2);
+    padding: var(--sp-2);
+    border-radius: var(--r-md);
+    font-size: var(--fs-sm);
+    color: var(--text-secondary);
+    transition: background var(--t-fast), color var(--t-fast);
+    white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    min-height: 40px;             /* near 44 px tap target */
+}
+.sidebar li a:hover          { background: var(--accent-blue-dim); color: var(--text-primary); }
+.sidebar li a.active,
+.sidebar li a.scrollspy-active {
+    background: var(--accent-blue-dim);
+    color: var(--accent-blue);
+    font-weight: 500;
+}
+
+.sidebar-divider {
+    height: 1px;
+    background: var(--border);
+    margin: var(--sp-3) var(--sp-5) var(--sp-5);
+}
+
+/* Dim overlay behind slide-in sidebar (mobile) */
+.sidebar-overlay {
+    display: none;
+    position: fixed;
+    inset: 0;
+    top: var(--header-h);
+    background: rgba(0, 0, 0, 0.50);
+    z-index: 149;
+}
+.sidebar-overlay.open { display: block; }
+
+/* ── Doc main content area ── */
+.doc-main {
+    flex: 1;
+    min-width: 0;
+    padding: var(--sp-6) var(--sp-10) var(--sp-20);
+}
+
+/* Article wrapper — left-aligned so content sits directly beside sidebar */
+.doc-article {
+    max-width: var(--content-max);
+    margin: 0;
+}
+
+/* ── Full-page wrapper (home, updates, documentation index) ── */
+.full-page {
+    max-width: var(--page-max);
+    margin: var(--header-h) auto 0;
+    padding: var(--sp-6) var(--sp-8) var(--sp-20);
+}
+
+/* ── Footer ── */
+footer {
+    background: rgba(15, 23, 42, 0.80);
+    border-top: 1px solid var(--border);
+    padding: var(--sp-8) 0;
+}
+
+.footer-inner {
+    max-width: var(--shell-max);
+    margin: 0 auto;
+    padding: 0 var(--sp-8);
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    flex-wrap: wrap;
+    gap: var(--sp-4);
+}
+
+.footer-links          { display: flex; gap: var(--sp-6); }
+.footer-links a        { color: var(--text-tertiary); font-size: var(--fs-sm); }
+.footer-links a:hover  { color: var(--accent-blue); }
+.copyright             { color: var(--text-tertiary); font-size: var(--fs-sm); }

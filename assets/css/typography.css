@@ -1,0 +1,233 @@
+/* ── Shared eyebrow label (used in hero, doc pages, updates) ── */
+.eyebrow {
+    display: inline-flex;
+    align-items: center;
+    gap: var(--sp-2);
+    font-size: var(--fs-xs);
+    font-weight: 700;
+    letter-spacing: 0.13em;
+    text-transform: uppercase;
+    color: var(--accent-blue);
+    margin-bottom: var(--sp-4);
+}
+
+/* ── Home / updates hero block ── */
+.home-hero {
+    padding: var(--sp-8) 0 var(--sp-12);
+    border-bottom: 1px solid var(--border);
+    margin-bottom: var(--sp-12);
+}
+
+/* Alias used inside home-hero markup */
+.home-hero-eyebrow { @extend .eyebrow; }   /* handled via shared class in HTML */
+
+.home-hero h1 {
+    font-size: var(--fs-4xl);
+    font-weight: 700;
+    letter-spacing: -0.02em;
+    line-height: var(--lh-tight);
+    margin-bottom: var(--sp-4);
+}
+.home-hero h1 span { color: var(--accent-blue); }
+
+.home-hero p {
+    font-size: var(--fs-lg);
+    color: var(--text-secondary);
+    max-width: 620px;
+    line-height: var(--lh-relaxed);
+    margin-bottom: var(--sp-2);
+}
+
+.home-hero-actions {
+    display: flex;
+    gap: var(--sp-3);
+    flex-wrap: wrap;
+    margin-top: var(--sp-6);
+}
+
+/* ── Section title with trailing rule ── */
+.section-title {
+    font-size: var(--fs-xl);
+    font-weight: 700;
+    color: var(--text-primary);
+    margin: var(--sp-10) 0 var(--sp-4);
+    display: flex;
+    align-items: center;
+    gap: var(--sp-2);
+}
+.section-title::after {
+    content: '';
+    flex: 1;
+    height: 1px;
+    background: var(--border);
+}
+
+/* ── Doc page title block ── */
+.doc-title-block {
+    margin-bottom: var(--sp-10);
+    padding-bottom: var(--sp-8);
+    border-bottom: 1px solid var(--border);
+}
+
+.doc-eyebrow {
+    display: inline-flex;
+    align-items: center;
+    gap: var(--sp-2);
+    font-size: var(--fs-xs);
+    font-weight: 700;
+    letter-spacing: 0.12em;
+    text-transform: uppercase;
+    color: var(--accent-blue);
+    margin-bottom: var(--sp-3);
+}
+
+.doc-title-block h1 {
+    font-size: var(--fs-3xl);
+    font-weight: 700;
+    letter-spacing: -0.01em;
+    line-height: var(--lh-tight);
+    margin-bottom: var(--sp-3);
+}
+
+.doc-lead {
+    font-size: var(--fs-lg);
+    color: var(--text-secondary);
+    line-height: var(--lh-relaxed);
+    max-width: 640px;
+}
+
+.doc-meta {
+    display: flex;
+    align-items: center;
+    flex-wrap: wrap;
+    gap: var(--sp-2);
+    margin-top: var(--sp-5);
+}
+
+/* ── Breadcrumb ── */
+.breadcrumb {
+    display: flex;
+    align-items: center;
+    gap: var(--sp-2);
+    font-size: var(--fs-xs);
+    color: var(--text-tertiary);
+    margin-bottom: var(--sp-10);
+}
+.breadcrumb a           { color: var(--text-tertiary); }
+.breadcrumb a:hover     { color: var(--accent-blue); }
+.breadcrumb-sep         { opacity: 0.50; }
+.breadcrumb-current     { color: var(--text-secondary); }
+
+/* ── Update detail page header ── */
+.update-detail        { max-width: var(--content-max); margin: 0 auto; }
+
+.update-header {
+    padding-bottom: var(--sp-8);
+    margin-bottom: var(--sp-8);
+    border-bottom: 1px solid var(--border);
+}
+
+.update-header h1 {
+    font-size: var(--fs-3xl);
+    font-weight: 700;
+    margin: var(--sp-2) 0;
+    letter-spacing: -0.01em;
+    line-height: var(--lh-tight);
+}
+
+.update-meta {
+    font-size: var(--fs-xs);
+    color: var(--text-tertiary);
+    letter-spacing: 0.04em;
+    margin-top: var(--sp-1);
+}
+
+/* ── Prose — long-form article body ── */
+.prose h2 {
+    font-size: var(--fs-2xl);
+    font-weight: 700;
+    margin: var(--sp-10) 0 var(--sp-3);
+    padding-top: var(--sp-2);
+    color: var(--text-primary);
+    /* Offset for fixed header so anchor links aren't hidden (WCAG 2.4.3) */
+    scroll-margin-top: calc(var(--header-h) + var(--sp-6));
+}
+
+.prose h3 {
+    font-size: var(--fs-lg);
+    font-weight: 600;
+    margin: var(--sp-6) 0 var(--sp-2);
+    color: var(--accent-blue);
+    scroll-margin-top: calc(var(--header-h) + var(--sp-6));
+}
+
+.prose h4 {
+    font-size: var(--fs-base);
+    font-weight: 600;
+    color: var(--text-primary);
+    margin: var(--sp-5) 0 var(--sp-2);
+    text-transform: uppercase;
+    letter-spacing: 0.06em;
+}
+
+.prose p {
+    color: var(--text-secondary);
+    margin-bottom: var(--sp-4);
+    font-size: var(--fs-base);
+    line-height: var(--lh-relaxed);
+}
+.prose p:last-child { margin-bottom: 0; }
+
+.prose ul,
+.prose ol {
+    color: var(--text-secondary);
+    padding-left: var(--sp-6);
+    margin-bottom: var(--sp-4);
+    font-size: var(--fs-base);
+}
+.prose li { margin-bottom: var(--sp-1); line-height: var(--lh-normal); }
+
+.prose strong { color: var(--text-primary); font-weight: 600; }
+.prose em     { color: var(--text-secondary); font-style: italic; }
+
+/* Underline prose links — colour alone insufficient (WCAG 1.4.1) */
+.prose a {
+    color: var(--accent-blue);
+    text-decoration: underline;
+    text-underline-offset: 3px;
+}
+.prose a:hover { color: var(--accent-blue-hover); }
+
+.prose hr {
+    border: none;
+    border-top: 1px solid var(--border);
+    margin: var(--sp-8) 0;
+}
+
+/* ── Inline code & code blocks ── */
+.prose code {
+    background: rgba(96, 165, 250, 0.10);
+    color: var(--accent-blue);
+    padding: 0.10rem 0.40rem;
+    border-radius: var(--r-sm);
+    font-size: 0.85em;
+    font-family: 'Fira Code', 'Cascadia Code', 'Consolas', monospace;
+}
+
+.prose pre {
+    background: rgba(0, 0, 0, 0.40);
+    border: 1px solid var(--border);
+    border-radius: var(--r-lg);
+    padding: var(--sp-5) var(--sp-6);
+    overflow-x: auto;
+    margin: var(--sp-5) 0;
+    font-size: var(--fs-xs);
+    line-height: 1.60;
+}
+
+.prose pre code {
+    background: none;
+    color: #e2e8f0;
+    padding: 0;
+    font-size: inherit;
+}

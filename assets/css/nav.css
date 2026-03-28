@@ -1,0 +1,159 @@
+header {
+    position: fixed;
+    top: 0; left: 0; right: 0;
+    height: var(--header-h);
+    background: rgba(15, 23, 42, 0.95);
+    backdrop-filter: blur(12px);
+    border-bottom: 1px solid var(--border);
+    z-index: 200;
+    display: flex;
+    align-items: center;
+}
+
+.header-inner {
+    width: 100%;
+    max-width: var(--shell-max);
+    margin: 0 auto;
+    padding: 0 var(--sp-8);
+    display: grid;
+    grid-template-columns: 1fr auto 1fr;
+    align-items: center;
+    gap: var(--sp-4);
+}
+
+.header-inner .logo         { justify-self: start; }
+.header-inner .header-nav   { justify-self: center; }
+.header-inner .header-right { justify-self: end; }
+
+.header-inner .menu-toggle {
+    display: none;
+    justify-self: end;
+    grid-column: 3;
+    grid-row: 1;
+}
+
+.logo {
+    display: flex;
+    align-items: center;
+    gap: var(--sp-2);
+    flex-shrink: 0;
+}
+.logo img { height: 38px; width: auto; display: block; }
+
+.header-nav {
+    display: flex;
+    align-items: center;
+    gap: var(--sp-8);
+}
+
+.header-nav a {
+    color: var(--text-secondary);
+    font-size: var(--fs-sm);
+    letter-spacing: 0.04em;
+    padding: var(--sp-1) 0;
+    border-bottom: 2px solid transparent;
+    transition: color var(--t-normal), border-color var(--t-normal);
+}
+.header-nav a:hover  { color: var(--text-primary); }
+.header-nav a.active { color: var(--accent-blue); border-bottom-color: var(--accent-blue); }
+
+/* Scoped focus ring — keep it flush with the underline indicator */
+.header-nav a:focus-visible {
+    outline: 3px solid var(--focus-ring);
+    outline-offset: 4px;
+    border-radius: 3px;
+}
+
+/* ── Header right-side actions ── */
+.header-right {
+    display: flex;
+    align-items: center;
+    gap: var(--sp-4);
+    flex-shrink: 0;
+}
+
+/* Optional version badge */
+.header-badge {
+    font-size: var(--fs-xs);
+    font-weight: 700;
+    letter-spacing: 0.10em;
+    text-transform: uppercase;
+    padding: 0.22rem 0.65rem;
+    border-radius: var(--r-full);
+    background: rgba(52, 211, 153, 0.10);
+    color: var(--accent-green);
+    border: 1px solid rgba(52, 211, 153, 0.25);
+}
+
+/* Header CTA buttons (Main Site / GitHub) */
+.btn-header {
+    display: inline-flex;
+    align-items: center;
+    gap: var(--sp-2);
+    padding: 0.42rem var(--sp-4);
+    border-radius: var(--r-md);
+    border: 1px solid var(--border);
+    color: var(--text-secondary);
+    font-size: var(--fs-sm);
+    font-family: inherit;
+    transition: border-color var(--t-normal), color var(--t-normal);
+    min-height: var(--touch-min);   /* WCAG 2.5.8 */
+}
+.btn-header:hover { border-color: rgba(96, 165, 250, 0.40); color: var(--text-primary); }
+
+/* ── Hamburger toggle (hidden on desktop, shown via responsive partial) ── */
+.menu-toggle {
+    display: none;
+    background: none;
+    border: none;
+    color: var(--text-primary);
+    cursor: pointer;
+    padding: var(--sp-2);
+    border-radius: var(--r-md);
+    min-width:  var(--touch-min);   /* WCAG 2.5.8 */
+    min-height: var(--touch-min);
+    justify-content: center;
+    align-items: center;
+}
+.menu-toggle:hover { background: var(--accent-blue-dim); }
+.menu-toggle svg   { display: block; }
+
+/* ── Mobile drop-down nav panel ─────────────────────────────────────────────
+   Hidden by default; shown by JS adding .open.
+   Declared here (outside the media query) so it can be toggled cleanly.
+   Visibility is governed by the responsive partial.
+   ──────────────────────────────────────────────────────────────────────────── */
+.mobile-nav {
+    display: none;           /* JS will toggle to flex via .open */
+    position: fixed;
+    top: var(--header-h);
+    left: 0; right: 0;
+    background: rgba(15, 23, 42, 0.98);
+    backdrop-filter: blur(12px);
+    border-bottom: 1px solid var(--border);
+    flex-direction: column;
+    padding: var(--sp-4) var(--sp-6) var(--sp-6);
+    gap: 0;
+    z-index: 199;
+}
+.mobile-nav.open { display: flex; }
+
+@keyframes navSlideDown {
+    from { opacity: 0; transform: translateY(-6px); }
+    to   { opacity: 1; transform: translateY(0); }
+}
+
+.mobile-nav a {
+    color: var(--text-secondary);
+    font-size: var(--fs-base);
+    padding: 0.85rem 0.25rem;
+    border-bottom: 1px solid var(--border);
+    transition: color var(--t-normal);
+    text-decoration: none;
+    min-height: var(--touch-min);   /* WCAG 2.5.8 */
+    display: flex;
+    align-items: center;
+}
+.mobile-nav a:last-child          { border-bottom: none; }
+.mobile-nav a:hover,
+.mobile-nav a.active              { color: var(--accent-blue); }

@@ -41,3 +41,12 @@ defaults:
       path: ""
     values:
       layout: default
+
+include:
+  - assets/css/_tokens.css
+  - assets/css/_reset.css
+  - assets/css/_nav.css
+  - assets/css/_layout.css
+  - assets/css/_typography.css
+  - assets/css/_components.css
+  - assets/css/_responsive.css

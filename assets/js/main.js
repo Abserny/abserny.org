@@ -24,10 +24,16 @@ const sidebar        = document.getElementById('sidebar');
 const sidebarOverlay = document.getElementById('sidebarOverlay');
 
 if (sidebar && sidebarOverlay) {
+    // On doc pages the hamburger opens the SIDEBAR, not the mobile nav.
+    // We add a separate listener that runs only when sidebar exists.
+    // The mobileNav listener above still fires, but we immediately close
+    // mobileNav so only the sidebar panel shows — avoiding the conflict.
     if (menuToggle) {
         menuToggle.addEventListener('click', () => {
-            sidebar.classList.toggle('open');
-            sidebarOverlay.classList.toggle('open');
+            const sidebarOpen = sidebar.classList.toggle('open');
+            sidebarOverlay.classList.toggle('open', sidebarOpen);
+            // Keep mobileNav closed on doc pages to avoid the double-panel conflict
+            if (mobileNav) mobileNav.classList.remove('open');
         });
     }
     sidebarOverlay.addEventListener('click', () => {

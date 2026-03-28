@@ -1,0 +1,76 @@
+/* ── Narrow desktop / large tablet ── */
+@media (max-width: 1024px) {
+    :root { --sidebar-w: 220px; }
+
+    .doc-main { padding: var(--sp-6) var(--sp-6) var(--sp-16); }
+}
+
+/* ── Tablet & mobile — hamburger replaces top nav ── */
+@media (max-width: 968px) {
+
+    /* Header collapses to logo + hamburger */
+    .header-inner {
+        grid-template-columns: 1fr auto;
+    }
+    .header-nav,
+    .header-right { display: none !important; }
+
+    .header-inner .menu-toggle {
+        display: flex !important;
+        align-items: center;
+        justify-content: center;
+        grid-column: 2;
+        grid-row: 1;
+    }
+
+    /* Animate the mobile nav panel */
+    .mobile-nav.open { animation: navSlideDown var(--t-normal) ease forwards; }
+
+    /* Doc sidebar slides in from the left */
+    .sidebar {
+        position: fixed;
+        left: -280px;
+        top: var(--header-h);
+        height: calc(100vh - var(--header-h));
+        width: 280px;
+        z-index: 150;
+        transition: left var(--t-slide);
+        background: var(--bg-navy);
+    }
+    .sidebar.open { left: 0; }
+
+    /* Full-page top padding matches doc-main on mobile */
+    .full-page { padding: var(--sp-6) var(--sp-6) var(--sp-12); }
+
+    /* Doc content area */
+    .doc-main { padding: var(--sp-6) var(--sp-5) var(--sp-12); }
+
+    /* Typography scale-down */
+    .home-hero h1        { font-size: var(--fs-3xl); }
+    .doc-title-block h1  { font-size: 1.9rem; }
+    .update-header h1    { font-size: 1.9rem; }
+
+    /* Grid reflows */
+    .metric-grid { grid-template-columns: 1fr 1fr; }
+    .gesture-row { grid-template-columns: 120px 1fr; }
+    .state-row   { grid-template-columns: 90px 1fr; }
+}
+
+/* ── Small phones ── */
+@media (max-width: 480px) {
+    .home-hero h1       { font-size: var(--fs-3xl); }
+    .home-hero-actions  { flex-direction: column; }
+
+    /* Collapse two-column tables to stacked layout */
+    .gesture-row,
+    .state-row          { grid-template-columns: 1fr; }
+
+    .gesture-name,
+    .state-name         { border-right: none; border-bottom: 1px solid var(--border); }
+
+    /* Metric cards: single column */
+    .metric-grid        { grid-template-columns: 1fr; }
+
+    .full-page          { padding: var(--sp-4) var(--sp-4) var(--sp-12); }
+    .doc-main           { padding: var(--sp-4) var(--sp-4) var(--sp-12); }
+}

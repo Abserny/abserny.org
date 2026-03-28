@@ -1,0 +1,82 @@
+:root {
+    /* ── Colour palette ── */
+    --bg-dark:          #0a0e1a;
+    --bg-navy:          #0f172a;
+    --bg-card:          rgba(255, 255, 255, 0.04);
+
+    --text-primary:     #ffffff;
+    --text-secondary:   rgba(255, 255, 255, 0.70);
+    /* 0.55 is the minimum that passes WCAG AA at 15 px body text */
+    --text-tertiary:    rgba(255, 255, 255, 0.55);
+
+    --accent-blue:      #60a5fa;
+    --accent-blue-dim:  rgba(96, 165, 250, 0.15);
+    --accent-blue-hover:#93c5fd;
+    --accent-green:     #34d399;
+    --accent-amber:     #fbbf24;
+    --accent-red:       #f87171;
+    --accent-violet:    #a78bfa;
+
+    --border:           rgba(255, 255, 255, 0.10);
+
+    /* ── Focus ring (WCAG 2.4.11 / 2.2 — 3 px solid, 3 px offset) ── */
+    --focus-ring:       #60a5fa;
+
+    /* ── Layout dimensions ── */
+    --header-h:         64px;
+    --sidebar-w:        260px;
+    --content-max:      1100px;  /* doc article max-width */
+    --page-max:         900px;   /* full-page (home / updates) max-width */
+    --shell-max:        1440px;  /* header / footer inner max-width */
+
+    /* ── Spacing scale (multiples of 0.25 rem) ── */
+    --sp-1:   0.25rem;
+    --sp-2:   0.50rem;
+    --sp-3:   0.75rem;
+    --sp-4:   1.00rem;
+    --sp-5:   1.25rem;
+    --sp-6:   1.50rem;
+    --sp-8:   2.00rem;
+    --sp-10:  2.50rem;
+    --sp-12:  3.00rem;
+    --sp-16:  4.00rem;
+    --sp-20:  5.00rem;
+
+    /* ── Typography scale ──
+       All font-sizes are rem so they scale with the user's browser preference.
+       Minimum body copy: 15 px (0.9375 rem at 16 px root).
+       Minimum UI labels: 12 px (0.75 rem) — below this WCAG readability breaks.
+    ── */
+    --fs-xs:   0.75rem;    /* 12 px — labels, badges, meta */
+    --fs-sm:   0.875rem;   /* 14 px — secondary UI, sidebar links */
+    --fs-base: 0.9375rem;  /* 15 px — body copy */
+    --fs-md:   1.00rem;    /* 16 px — card headings */
+    --fs-lg:   1.05rem;    /* 16.8 px — lead text */
+    --fs-xl:   1.20rem;    /* 19.2 px — section titles */
+    --fs-2xl:  1.35rem;    /* 21.6 px — prose h2 */
+    --fs-3xl:  2.20rem;    /* 35.2 px — doc page h1 */
+    --fs-4xl:  2.60rem;    /* 41.6 px — home hero h1 */
+
+    /* ── Line-heights ── */
+    --lh-tight:  1.15;
+    --lh-snug:   1.55;
+    --lh-normal: 1.65;
+    --lh-relaxed:1.75;
+    --lh-loose:  1.80;
+
+    /* ── Border radii ── */
+    --r-sm:   4px;
+    --r-md:   8px;
+    --r-lg:   10px;
+    --r-xl:   12px;
+    --r-2xl:  14px;
+    --r-full: 9999px;
+
+    /* ── Transitions ── */
+    --t-fast:   0.15s ease;
+    --t-normal: 0.20s ease;
+    --t-slide:  0.25s ease;
+
+    /* ── Touch targets (WCAG 2.5.8 — minimum 44 × 44 px) ── */
+    --touch-min: 44px;
+}

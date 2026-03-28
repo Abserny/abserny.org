@@ -1,0 +1,342 @@
+/* ─────────────────────────────────────────────────────────────────────────────
+   BADGES  —  Status pills (Live / In Progress / Planned / Android)
+   ───────────────────────────────────────────────────────────────────────────── */
+.badge {
+    display: inline-flex;
+    align-items: center;
+    gap: var(--sp-1);
+    font-size: var(--fs-xs);          /* 12 px minimum (WCAG readability) */
+    font-weight: 700;
+    letter-spacing: 0.08em;
+    text-transform: uppercase;
+    padding: 0.25rem 0.70rem;
+    border-radius: var(--r-full);
+    border: 1px solid;
+    white-space: nowrap;
+}
+
+.badge-live    { background: rgba( 52,211,153,.10); color: var(--accent-green);    border-color: rgba( 52,211,153,.25); }
+.badge-dev     { background: rgba(251,191, 36,.08); color: var(--accent-amber);    border-color: rgba(251,191, 36,.25); }
+.badge-planned { background: rgba(255,255,255,.04); color: var(--text-secondary);  border-color: var(--border); }
+.badge-android { background: rgba( 96,165,250,.10); color: var(--accent-blue);     border-color: rgba( 96,165,250,.25); }
+
+/* ─────────────────────────────────────────────────────────────────────────────
+   BUTTONS  —  Primary CTA, secondary CTA, doc link
+   ───────────────────────────────────────────────────────────────────────────── */
+
+/* Shared base */
+.btn-primary,
+.btn-secondary {
+    display: inline-flex;
+    align-items: center;
+    gap: var(--sp-2);
+    padding: 0.65rem var(--sp-5);
+    border-radius: var(--r-md);
+    font-weight: 600;
+    font-size: var(--fs-sm);
+    font-family: inherit;
+    transition: background var(--t-normal), color var(--t-normal), border-color var(--t-normal);
+    min-height: var(--touch-min);     /* WCAG 2.5.8 */
+}
+
+.btn-primary {
+    background: var(--accent-blue);
+    color: var(--bg-dark);
+    font-weight: 700;
+}
+.btn-primary:hover { background: var(--accent-blue-hover); color: var(--bg-dark); }
+
+.btn-secondary {
+    background: var(--accent-blue-dim);
+    color: var(--accent-blue);
+    border: 1px solid rgba(96, 165, 250, 0.30);
+}
+.btn-secondary:hover { background: rgba(96, 165, 250, 0.22); color: var(--accent-blue); }
+
+/* Inline doc link inside cards — underline for WCAG 1.4.1 */
+.btn-doc {
+    display: inline-flex;
+    align-items: center;
+    gap: 0.35rem;
+    font-size: var(--fs-sm);
+    font-weight: 600;
+    color: var(--accent-blue);
+    letter-spacing: 0.02em;
+    margin-top: var(--sp-2);
+    transition: gap var(--t-normal);
+    text-decoration: underline;
+    text-underline-offset: 3px;
+}
+.btn-doc:hover { gap: 0.55rem; color: var(--accent-blue-hover); }
+
+/* ─────────────────────────────────────────────────────────────────────────────
+   CALLOUTS  —  Note / Tip / Warning boxes inside prose
+   ───────────────────────────────────────────────────────────────────────────── */
+.callout {
+    display: flex;
+    gap: 0.85rem;
+    padding: var(--sp-4) var(--sp-5);
+    border-radius: var(--r-lg);
+    margin: var(--sp-6) 0;
+    font-size: var(--fs-base);
+    line-height: var(--lh-normal);
+}
+.callout-icon          { font-size: var(--fs-md); flex-shrink: 0; margin-top: 0.05rem; }
+.callout-body          { color: var(--text-secondary); }
+.callout-body strong   { display: block; margin-bottom: 0.2rem; color: var(--text-primary); }
+
+.callout-note    { background: rgba( 96,165,250,.07); border-left: 3px solid var(--accent-blue); }
+.callout-tip     { background: rgba( 52,211,153,.07); border-left: 3px solid var(--accent-green); }
+.callout-warning { background: rgba(251,191, 36,.07); border-left: 3px solid var(--accent-amber); }
+
+/* ─────────────────────────────────────────────────────────────────────────────
+   PROJECT CARDS  —  3-up grid on home and documentation index
+   ───────────────────────────────────────────────────────────────────────────── */
+.project-cards {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(240px, 1fr));
+    gap: 1px;                          /* hairline separator via background */
+    background: var(--border);
+    border: 1px solid var(--border);
+    border-radius: var(--r-2xl);
+    overflow: hidden;
+    margin-top: var(--sp-6);
+}
+
+.project-card {
+    background: var(--bg-card);
+    padding: var(--sp-6);
+    display: flex;
+    flex-direction: column;
+    gap: var(--sp-2);
+    transition: background var(--t-normal);
+}
+.project-card:hover { background: rgba(96, 165, 250, 0.05); }
+
+.project-card h3 {
+    font-size: var(--fs-md);
+    font-weight: 700;
+    color: var(--text-primary);
+}
+
+.project-card p {
+    font-size: var(--fs-base);
+    color: var(--text-secondary);
+    line-height: var(--lh-normal);
+    flex: 1;
+}
+
+/* ─────────────────────────────────────────────────────────────────────────────
+   UPDATE CARDS  —  Changelog list items
+   ───────────────────────────────────────────────────────────────────────────── */
+.updates-list {
+    list-style: none;
+    display: flex;
+    flex-direction: column;
+    gap: var(--sp-4);
+}
+
+.update-card {
+    background: var(--bg-card);
+    border: 1px solid var(--border);
+    border-radius: var(--r-xl);
+    padding: var(--sp-6);
+    display: flex;
+    flex-direction: column;
+    gap: var(--sp-2);
+    transition: border-color var(--t-normal);
+}
+.update-card:hover { border-color: rgba(96, 165, 250, 0.35); }
+
+.update-date {
+    font-size: var(--fs-xs);
+    font-weight: 700;
+    letter-spacing: 0.08em;
+    text-transform: uppercase;
+    color: var(--text-tertiary);
+}
+
+.update-card h2        { font-size: var(--fs-md); font-weight: 600; }
+.update-card h2 a      { color: var(--text-primary); }
+.update-card h2 a:hover{ color: var(--accent-blue); }
+.update-card p         { font-size: var(--fs-base); color: var(--text-secondary); line-height: var(--lh-normal); }
+
+.read-more {
+    font-size: var(--fs-sm);
+    color: var(--accent-blue);
+    display: inline-flex;
+    align-items: center;
+    gap: var(--sp-1);
+    margin-top: var(--sp-1);
+    text-decoration: underline;      /* WCAG 1.4.1 */
+    text-underline-offset: 3px;
+}
+.read-more:hover { color: var(--accent-blue-hover); }
+
+/* ─────────────────────────────────────────────────────────────────────────────
+   METRIC GRID  —  Key numbers on the home page
+   ───────────────────────────────────────────────────────────────────────────── */
+.metric-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(160px, 1fr));
+    gap: 1px;
+    background: var(--border);
+    border: 1px solid var(--border);
+    border-radius: var(--r-xl);
+    overflow: hidden;
+    margin: var(--sp-6) 0;
+}
+
+.metric-cell {
+    background: var(--bg-card);
+    padding: var(--sp-5) var(--sp-6);
+    display: flex;
+    flex-direction: column;
+    gap: var(--sp-1);
+}
+
+.metric-value {
+    font-size: 1.8rem;
+    font-weight: 800;
+    color: var(--text-primary);
+    letter-spacing: -0.03em;
+    line-height: 1;
+}
+
+.metric-unit {
+    font-size: var(--fs-sm);
+    font-weight: 500;
+    color: var(--text-tertiary);
+    margin-left: 2px;
+}
+
+.metric-label {
+    font-size: var(--fs-xs);
+    font-weight: 700;
+    letter-spacing: 0.08em;
+    text-transform: uppercase;
+    color: var(--text-tertiary);
+}
+
+/* ─────────────────────────────────────────────────────────────────────────────
+   MODE CARDS  —  Detection mode overview inside docs
+   ───────────────────────────────────────────────────────────────────────────── */
+.mode-cards {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+    gap: 1px;
+    background: var(--border);
+    border: 1px solid var(--border);
+    border-radius: var(--r-xl);
+    overflow: hidden;
+    margin: var(--sp-6) 0;
+}
+
+.mode-card {
+    background: var(--bg-card);
+    padding: var(--sp-5);
+    display: flex;
+    flex-direction: column;
+    gap: var(--sp-2);
+    border-left: 3px solid var(--mc, var(--accent-blue));
+    transition: background var(--t-normal);
+}
+.mode-card:hover { background: rgba(255, 255, 255, 0.04); }
+
+.mode-card-name {
+    font-size: var(--fs-xs);
+    font-weight: 800;
+    letter-spacing: 0.12em;
+    text-transform: uppercase;
+    color: var(--mc, var(--accent-blue));
+}
+
+.mode-card-desc {
+    font-size: var(--fs-sm);
+    color: var(--text-secondary);
+    line-height: var(--lh-normal);
+}
+
+/* ─────────────────────────────────────────────────────────────────────────────
+   GESTURE TABLE  —  Five-gesture reference in docs
+   ───────────────────────────────────────────────────────────────────────────── */
+.gesture-list {
+    border: 1px solid var(--border);
+    border-radius: var(--r-xl);
+    overflow: hidden;
+    margin: var(--sp-6) 0;
+}
+
+.gesture-row {
+    display: grid;
+    grid-template-columns: 160px 1fr;
+    border-bottom: 1px solid var(--border);
+    transition: background var(--t-fast);
+}
+.gesture-row:last-child { border-bottom: none; }
+.gesture-row:hover      { background: rgba(255, 255, 255, 0.02); }
+
+.gesture-name {
+    padding: 0.9rem var(--sp-5);
+    font-size: var(--fs-sm);
+    font-weight: 700;
+    color: var(--accent-blue);
+    border-right: 1px solid var(--border);
+    letter-spacing: 0.02em;
+    display: flex;
+    align-items: center;
+}
+
+.gesture-desc {
+    padding: 0.9rem var(--sp-5);
+    font-size: var(--fs-base);
+    color: var(--text-secondary);
+    display: flex;
+    align-items: center;
+    line-height: var(--lh-snug);
+}
+
+/* ─────────────────────────────────────────────────────────────────────────────
+   STATE TABLE  —  FSM state reference in docs
+   ───────────────────────────────────────────────────────────────────────────── */
+.state-list {
+    border: 1px solid var(--border);
+    border-radius: var(--r-xl);
+    overflow: hidden;
+    margin: var(--sp-6) 0;
+}
+
+.state-row {
+    display: grid;
+    grid-template-columns: 110px 1fr;
+    border-bottom: 1px solid var(--border);
+    transition: background var(--t-fast);
+}
+.state-row:last-child { border-bottom: none; }
+.state-row:hover      { background: rgba(255, 255, 255, 0.02); }
+
+.state-name {
+    padding: 0.9rem var(--sp-5);
+    font-size: var(--fs-xs);
+    font-weight: 800;
+    letter-spacing: 0.10em;
+    text-transform: uppercase;
+    border-right: 1px solid var(--border);
+    display: flex;
+    align-items: center;
+}
+/* Semantic state colours */
+.state-name.boot     { color: var(--accent-blue); }
+.state-name.ready    { color: var(--accent-blue); }
+.state-name.scanning { color: var(--accent-violet); }
+.state-name.speaking { color: var(--accent-green); }
+.state-name.error    { color: var(--accent-red); }
+
+.state-desc {
+    padding: 0.9rem var(--sp-5);
+    font-size: var(--fs-base);
+    color: var(--text-secondary);
+    display: flex;
+    align-items: center;
+    line-height: var(--lh-snug);
+}
